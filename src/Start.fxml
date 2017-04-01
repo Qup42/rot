@@ -9,7 +9,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PaintController">
    <children>
       <AnchorPane layoutX="-263.0" layoutY="-295.0" minHeight="900.0" minWidth="1600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
          <children>
@@ -39,7 +39,7 @@
                   <DialogPane prefHeight="745.0" prefWidth="59.0" />
                </content>
             </ScrollPane>
-            <Canvas height="515.0" layoutX="264.0" layoutY="384.0" width="1145.0" />
+            <Canvas id="canvas" fx:id="canvas" height="515.0" layoutX="264.0" layoutY="384.0" width="1145.0" />
          </children>
       </AnchorPane>
    </children>
