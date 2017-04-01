@@ -1,5 +1,5 @@
 package application;
-	
+
 import java.io.IOException;
 
 import javafx.application.Application;
@@ -17,31 +17,31 @@ import javafx.scene.layout.AnchorPane;
 
 
 public class Main extends Application {
-	
-	//Methoden und Attribute...
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //NICHT ANSCHAUEN!!!!
-	
+
     private Stage primaryStage;
     private AnchorPane layout;
-    
+
     @Override
 	public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
@@ -49,11 +49,11 @@ public class Main extends Application {
 
         initLayout();
 	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
-	
+
 	/**
      * Initializes the root layout.
      */
@@ -72,5 +72,5 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
-    
+
 }
