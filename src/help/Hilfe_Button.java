@@ -14,21 +14,33 @@ public class Hilfe_Button{
 	@FXML
 	Button schulbuch;
 	@FXML
-	Button menu;
+	Button klasse_wechseln;
+	@FXML
+	Button programme;
+	@FXML
+	Button bildschirmuebertragung;
+	@FXML
+	Button abmelden;
+	@FXML
+	Button stift;
+	@FXML
+	Button marker;
+	@FXML
+	Button radierer;
+	@FXML
+	Button farbe;
+	@FXML
+	Button hintergrund;
+	@FXML
+	Button geometrie;
 	@FXML
 	Button hilfe;
 	@FXML
-	Button menu;
-	@FXML
-	Button hilfe;
-	@FXML
-	Button menu;
-	@FXML
-	Button hilfe;
+	Button cloud_upload;
 
 	@FXML
 	protected void start_hilfe(){
-
+		menu.add
 	}
 
 	@FXML
