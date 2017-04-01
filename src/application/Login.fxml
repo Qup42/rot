@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="450.0" minWidth="800.0" prefWidth="1038.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController">
+<AnchorPane minHeight="450.0" minWidth="800.0" prefWidth="1038.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MyController">
    <children>
       <ComboBox fx:id="fach" layoutX="270.0" layoutY="265.0" prefWidth="150.0" promptText="Fach">
          <opaqueInsets>
@@ -19,6 +19,6 @@
             <Font size="51.0" />
          </font>
       </Text>
-      <Button layoutX="620.0" layoutY="265.0" mnemonicParsing="false" onAction="#anmelden" text="Anmelden" />
+      <Button layoutX="620.0" layoutY="265.0" mnemonicParsing="false" onAction="#login" text="Anmelden" />
    </children>
 </AnchorPane>
