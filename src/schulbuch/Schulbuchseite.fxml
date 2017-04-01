@@ -43,7 +43,7 @@
                 <MenuItem mnemonicParsing="false" text="Internet" />
                 <MenuItem mnemonicParsing="false" text="Dokumente" />
                   <MenuItem mnemonicParsing="false" text="Schulbuch" />
-                  <MenuItem mnemonicParsing="false" text="KLasse wechseln" />
+                  <MenuItem mnemonicParsing="false" text="Klasse wechseln" />
                   <MenuItem mnemonicParsing="false" text="Programme" />
                   <MenuItem mnemonicParsing="false" text="Bildschirmübertragung" />
                   <MenuItem mnemonicParsing="false" text="Abmelden" />
