@@ -13,6 +13,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 
 
@@ -73,4 +74,15 @@ public class Main extends Application {
         }
     }
 
+    Image Farbwahl = new Image("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\cmyk.png");
+    Image Stift    = new Image("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\pencil.png");
+    Image Hilfe    = new Image("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\question.png");
+    Image Menü     = new Image("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\img\\menu");
+    Image CloudUp  = new Image("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\cloud-computing");
+    Image Schulbücher = new Image ("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\books.png");
+    Image Suche = new Image ("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\lupe.png");
+    Image Radierer = new Image ("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\eraser.png");
+    Image Geometrie = new Image ("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\Geometrie.png");
+    Image Hintergrundstruktur = new Image ("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\background.png");
+    Image Textmarker = new Image ("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\marker.png");
 }

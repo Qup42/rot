@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PaintController">
+   <children>
+      <AnchorPane fx:id="basis" layoutX="-263.0" layoutY="-295.0" minHeight="900.0" minWidth="1600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <MenuButton fx:id="menu" layoutX="279.0" layoutY="307.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="99.0" text="Menu">
+              <items>
+                <MenuItem fx:id="internet" mnemonicParsing="false" text="Internet" />
+                <MenuItem fx:id="dokumente" mnemonicParsing="false" text="Dokumente" />
+                  <MenuItem fx:id="schulbuch" mnemonicParsing="false" text="Schulbuch" />
+                  <MenuItem fx:id="klasse_wechseln" mnemonicParsing="false" text="Klasse wechseln" />
+                  <MenuItem fx:id="programme" mnemonicParsing="false" text="Programme" />
+                  <MenuItem fx:id="bildschirmuebertragung" mnemonicParsing="false" text="Bildschirmübertragung" />
+                  <MenuItem fx:id="abmelden" mnemonicParsing="false" text="Abmelden" />
+              </items>
+            </MenuButton>
+            <Button fx:id="cloud_upload" layoutX="1523.0" layoutY="310.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="39.0" text="Could upload" />
+            <Button fx:id="geometrie" layoutX="1417.0" layoutY="310.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="39.0" text="Geometrie" />
+            <Button fx:id="hilfe" layoutX="1470.0" layoutY="310.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="39.0" text="Hilfe" />
+            <Button fx:id="marker" layoutX="991.0" layoutY="310.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="32.0" text="Marker" />
+            <Button fx:id="stift" layoutX="935.0" layoutY="310.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="32.0" text="Stift" />
+            <TextField fx:id="suche" layoutX="422.0" layoutY="308.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />
+            <ScrollPane layoutX="1466.0" layoutY="385.0" prefHeight="493.0" prefWidth="126.0" style="-fx-background-color: WHITE;">
+               <content>
+                  <DialogPane fx:id="seiten" prefHeight="745.0" prefWidth="59.0" />
+               </content>
+            </ScrollPane>
+
+
+            <Canvas fx:id="canvas" height="515.0" layoutX="264.0" layoutY="384.0" width="1145.0" />
+            <Button fx:id="farbe" layoutX="1101.0" layoutY="310.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="32.0" text="Farbe" />
+            <Button fx:id="radierer" layoutX="1045.0" layoutY="310.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="32.0" text="Radierer" />
+            <Button fx:id="suche_los" layoutX="692.0" layoutY="309.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="48.0" text="Suche" />
+            <Button fx:id="hintergrund" layoutX="1150.0" layoutY="310.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="32.0" text="Hintergrund" />
+
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
