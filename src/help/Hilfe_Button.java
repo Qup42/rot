@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class Hilfe_Button{
+
 	@FXML
 	Button menu;
 	@FXML
@@ -40,7 +41,7 @@ public class Hilfe_Button{
 
 	@FXML
 	protected void start_hilfe(){
-		menu.add
+
 	}
 
 	@FXML
