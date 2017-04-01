@@ -1,4 +1,4 @@
-package application;
+package dokumente;
 import java.io.File;
 
 public interface DokumentWerkzeugSpecification {
