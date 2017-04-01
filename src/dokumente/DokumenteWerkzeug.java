@@ -4,6 +4,8 @@ import java.io.File;
 public class DokumenteWerkzeug implements DokumentWerkzeugSpecification{
 
 	File aktuellesVerzeichnis;
+	String rootDir = "C:\\Users\\Mint2017.Rot\\Desktop";
+	//String rootDir = System.getProperty("user.home");
 
 	public DokumenteWerkzeug()
 	{
@@ -17,7 +19,7 @@ public class DokumenteWerkzeug implements DokumentWerkzeugSpecification{
 
 	@Override
 	public void geheInHomeVerzeichnis() {
-		aktuellesVerzeichnis = new File(System.getProperty("user.home"));
+		aktuellesVerzeichnis = new File(rootDir);
 	}
 
 	@Override
