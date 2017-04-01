@@ -19,7 +19,7 @@ public class LoginUI extends Application{
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
 	    Parent root = loader.load();
 
-	    MyController myController = loader.getController();
+	    LoginController myController = loader.getController();
 
 	    Scene scene = new Scene(root);
 	    primaryStage.setScene(scene);

@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 
-public class MyController implements Initializable{
+public class LoginController implements Initializable{
 
 	@FXML
 	public ComboBox fach;
