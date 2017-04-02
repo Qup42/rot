@@ -57,17 +57,17 @@
                   <Image url="@img/Geometrie.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="945.0" layoutY="313.0">
+            <ImageView layoutX="945.0" layoutY="313.0" onMouseClicked="#onPenClick">
                <image>
-                  <Image url="@img/pencil.png" />
+                  <Image  url="@img/pencil.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="995.0" layoutY="311.0">
+            <ImageView layoutX="995.0" layoutY="311.0" onMouseClicked="#onMarkerClick">
                <image>
                   <Image url="@img/marker.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="1049.0" layoutY="312.0">
+            <ImageView layoutX="1049.0" layoutY="312.0" onMouseClicked="#onEraserClick">
                <image>
                   <Image url="@img/eraser.png" />
                </image>
