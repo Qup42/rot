@@ -18,9 +18,16 @@ public class LoginController implements Initializable{
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		setupData();
 	}
 
+	@Deprecated
 	public void setData()
+	{
+
+	}
+
+	public void setupData()
 	{
 		fach.getItems().clear();
 		klasse.getItems().clear();
