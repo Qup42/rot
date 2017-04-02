@@ -36,18 +36,10 @@ public class DateiController implements Initializable{
 	{
 		dateiName.setText(file.getName());
 
-		if(file.isDirectory())
-		{
-			File iconFile = new File("src/dokumente/folder-icon.jpg");
-			Image imageIcon = new Image(iconFile.toURI().toString());
-			icon.setImage(imageIcon);
-		}
-		else
-		{
-			File iconFile = new File("src/dokumente/17.gif");
-			Image imageIcon = new Image(iconFile.toURI().toString());
-			icon.setImage(imageIcon);
-		}
+		File iconFile = (file.isDirectory())? new File("src/dokumente/verzeichnis.jpg") : new File("src/dokumente/datei.gif");
+
+		Image imageIcon = new Image(iconFile.toURI().toString());
+		icon.setImage(imageIcon);
 
 		zugehörigesFile = file;
 	}
