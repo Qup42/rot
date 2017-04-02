@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javax.imageio.ImageIO;
 
 import javafx.embed.swing.SwingFXUtils;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,6 +20,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
@@ -132,7 +134,10 @@ public class MainController implements Initializable{
 			}
 	}
 
-	private void hilfeAnzeigen(HBox hbox){
+	@FXML
+	AnchorPane untersteEbene;
 
-		}
+	private void hilfeAnzeigen(HBox hbox){
+		untersteEbene.getChildren().add(hbox);
+	}
 }

@@ -42,12 +42,12 @@
                   <Image url="@img/lupe.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="28.0" fitWidth="36.0" layoutX="1541.0" layoutY="310.0">
+            <ImageView fitHeight="28.0" fitWidth="36.0" layoutX="1541.0" layoutY="311.0">
                <image>
                   <Image url="@img/cloud-computing.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="1494.0" layoutY="313.0">
+            <ImageView fx:id="hilfe" layoutX="1495.0" layoutY="312.0" onMousePressed="#hilfe">
                <image>
                   <Image url="@img/question.png" />
                </image>

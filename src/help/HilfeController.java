@@ -53,7 +53,6 @@ public class HilfeController implements Initializable{
 	@FXML
 	Button cloud_upload;
 
-	@FXML
 	public static HBox startHilfe(){
 		Label label = new Label("Sally collects seashells on the seashore");
 		label.setStyle("-fx-background-color: coral; -fx-padding: 10px;");
