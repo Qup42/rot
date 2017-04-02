@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 public class Main extends Application {
 
 	 private Stage primaryStage;
+	 private MainController controller;
 
 	    @Override
 		public void start(Stage primaryStage) {
@@ -23,7 +24,7 @@ public class Main extends Application {
 	        	FXMLLoader loader = new FXMLLoader(getClass().getResource("Start.fxml"));
 
 	            AnchorPane layout  = (AnchorPane) loader.load();
-	        	MainController controller = loader.getController();
+	        	controller = loader.getController();
 	        	controller.makeDrawable(MainController.Tool.Stift);
 	            // Show the scene containing the root layout.
 	            Scene scene = new Scene(layout);
@@ -36,6 +37,22 @@ public class Main extends Application {
 
 		public static void main(String[] args) {
 			launch(args);
+		}
+		
+		public void onPenClick()
+		{
+			controller.makeDrawable(MainController.Tool.Stift);
+		}
+		public void onMarkerClick()
+		{
+			controller.makeDrawable(MainController.Tool.Marker);
+		}
+		public void onEraserClick()
+		{
+			controller.makeDrawable(MainController.Tool.Radierer);
+		}
+		public void changeColor()
+		{
 		}
 
 
