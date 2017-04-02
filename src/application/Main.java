@@ -118,6 +118,7 @@ public class Main extends Application implements LoginCallback, MenuCallback, Do
 	        }
 		}
 
+
 		@Override
 		public void beendeDokumente() {
 			//TODO: Hartmut: mach mal!
