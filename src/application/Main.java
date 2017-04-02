@@ -40,7 +40,7 @@ public class Main extends Application implements LoginCallback, ChooseDocumentCa
 		@Override
 		public void ausgewählteDatei(File datei) {
 			showMain(datei);
-			
+
 		}
 
 		private void showLogin()
@@ -80,7 +80,7 @@ public class Main extends Application implements LoginCallback, ChooseDocumentCa
 	            e.printStackTrace();
 	        }
 		}
-		
+
 		private void showDocuments()
 		{
 			try {
@@ -99,7 +99,12 @@ public class Main extends Application implements LoginCallback, ChooseDocumentCa
 	        }
 		}
 
-		
+		@Override
+		public void beendeDokumente() {
+			//TODO: Hartmut: mach mal!
+		}
 
-		
+
+
+
 }

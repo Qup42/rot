@@ -82,6 +82,12 @@ public class DokumenteController implements Initializable, DateiCallback {
 	}
 
 	@FXML
+	protected void zurück()
+	{
+		callback.beendeDokumente();
+	}
+
+	@FXML
 	protected void suchen()
 	{
 		//System.out.println(werkzeug.searchFor(suche.getText().toString()));
