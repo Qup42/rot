@@ -11,7 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.FlowPane;
 
-public class DokumenteController implements Initializable, ZyklischeAbhängigkeiten{
+public class DokumenteController implements Initializable, ZyklischeAbhängigkeiten {
 
 	@FXML
 	FlowPane dokumenteFlowPane;
@@ -22,78 +22,60 @@ public class DokumenteController implements Initializable, ZyklischeAbhängigkeit
 	public void initialize(URL location, ResourceBundle resources) {
 	}
 
-	public Parent erstelleDateiObjeckt(String beschriftung)
-	{
+	public Parent erstelleDateiObjeckt(String beschriftung) {
 		FXMLLoader datei = new FXMLLoader(getClass().getResource("Datei.fxml"));
-	    Parent root = null;
+		Parent root = null;
 		try {
 			root = datei.load();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-	    DateiController controller = datei.getController();
-	    controller.setCallback(this);
-	    controller.setzeDatei(beschriftung);
-	    return root;
+		DateiController controller = datei.getController();
+		controller.setCallback(this);
+		controller.setzeDatei(beschriftung);
+		return root;
 	}
 
-	public Parent erstelleDateiObjeckt(File file)
-	{
+	public Parent erstelleDateiObjeckt(File file) {
 		FXMLLoader datei = new FXMLLoader(getClass().getResource("Datei.fxml"));
-	    Parent root = null;
+		Parent root = null;
 		try {
 			root = datei.load();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-	    DateiController controller = datei.getController();
-	    controller.setCallback(this);
-	    controller.setzeDatei(file);
-	    return root;
+		DateiController controller = datei.getController();
+		controller.setCallback(this);
+		controller.setzeDatei(file);
+		return root;
 	}
 
-	public void displayFiles()
-	{
+	public void displayFiles() {
 		dokumenteFlowPane.getChildren().clear();
 
 		File[] files = werkzeug.gebeAlleDateienInVerzeichnis();
 
-		int zähler = 0;
-		int länge = files.length;
-
-		if(länge == 0)
-		{
+		if (files.length == 0) {
 			dokumenteFlowPane.getChildren().add(erstelleDateiObjeckt("Hier sind keine Dateien"));
-		    return;
+			return;
 		}
 
-		for(int y = 0; y < 3; y++)
+		for(File file : files)
 		{
-			for(int x = 0; x < 8; x++)
-			{
-				dokumenteFlowPane.getChildren().add(erstelleDateiObjeckt(files[zähler]));
-
-				zähler++;
-				if(zähler == länge)
-				{
-					return;
-				}
-			}
+			dokumenteFlowPane.getChildren().add(erstelleDateiObjeckt(file));
 		}
 	}
 
 	@FXML
-	protected void homeDir()
-	{
+	protected void homeDir() {
 		werkzeug.geheInHomeVerzeichnis();
 		displayFiles();
 	}
 
 	@FXML
-	protected void eineEbeneHoch()
-	{
+	protected void eineEbeneHoch() {
 		werkzeug.einVerzeichnisHoch();
 		displayFiles();
 	}
@@ -104,4 +86,3 @@ public class DokumenteController implements Initializable, ZyklischeAbhängigkeit
 		displayFiles();
 	}
 }
-
