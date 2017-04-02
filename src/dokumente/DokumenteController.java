@@ -21,6 +21,7 @@ public class DokumenteController implements Initializable, DateiCallback {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		refreshDisplay();
 	}
 
 	public void setCallback(DokumenteCallback zuSetzenderCallback)
@@ -58,7 +59,10 @@ public class DokumenteController implements Initializable, DateiCallback {
 		return root;
 	}
 
-	public void displayFiles() {
+	@Deprecated
+	public void displayFiles() {}
+
+	private void refreshDisplay() {
 		dokumenteFlowPane.getChildren().clear();
 
 		File[] files = werkzeug.gebeAlleInVerzeichnis();
@@ -77,19 +81,19 @@ public class DokumenteController implements Initializable, DateiCallback {
 	@FXML
 	protected void homeDir() {
 		werkzeug.geheInHomeVerzeichnis();
-		displayFiles();
+		refreshDisplay();
 	}
 
 	@FXML
 	protected void eineEbeneHoch() {
 		werkzeug.einVerzeichnisHoch();
-		displayFiles();
+		refreshDisplay();
 	}
 
 	@Override
 	public void geheInVerzeichnis(String name) {
 		werkzeug.geheInUnterverzeichnis(name);
-		displayFiles();
+		refreshDisplay();
 	}
 
 	@Override
