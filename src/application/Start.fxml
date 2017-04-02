@@ -10,7 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<AnchorPane fx:id="untersteEbene" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
       <AnchorPane fx:id="basis" layoutX="-263.0" layoutY="-295.0" minHeight="900.0" minWidth="1600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
          <children>
@@ -28,7 +28,7 @@
             <TextField fx:id="suche" layoutX="422.0" layoutY="308.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />
             <ScrollPane layoutX="1466.0" layoutY="385.0" prefHeight="493.0" prefWidth="126.0" style="-fx-background-color: WHITE;">
                <content>
-                  <DialogPane fx:id="seiten" prefHeight="745.0" prefWidth="59.0" />
+                  <DialogPane fx:id="seiten" prefHeight="493.0" prefWidth="111.0" style="-fx-background-color: white;" />
                </content>
             </ScrollPane>
             <Canvas fx:id="canvas" height="515.0" layoutX="264.0" layoutY="384.0" width="1145.0" />
