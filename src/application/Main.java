@@ -24,7 +24,7 @@ public class Main extends Application {
 
 	            AnchorPane layout  = (AnchorPane) loader.load();
 	        	controller = loader.getController();
-	        	controller.makeDrawable(MainController.Tool.Stift);
+	        	controller.makeDrawable();
 	            // Show the scene containing the root layout.
 	            Scene scene = new Scene(layout);
 	            primaryStage.setScene(scene);
