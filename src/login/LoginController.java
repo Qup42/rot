@@ -24,10 +24,9 @@ public class LoginController implements Initializable{
 	@Deprecated
 	public void setData()
 	{
-
 	}
 
-	public void setupData()
+	private void setupData()
 	{
 		fach.getItems().clear();
 		klasse.getItems().clear();
