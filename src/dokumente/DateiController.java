@@ -4,8 +4,6 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javax.swing.Icon;
-
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
@@ -19,7 +17,7 @@ public class DateiController implements Initializable{
 	@FXML
 	ImageView icon;
 
-	File zugehörigesFile;
+	File callback;
 
 	DateiCallback zyklen;
 
@@ -40,25 +38,27 @@ public class DateiController implements Initializable{
 		Image imageIcon = new Image(iconFile.toURI().toString());
 		icon.setImage(imageIcon);
 
-		zugehörigesFile = file;
+		callback = file;
 	}
 
-	public void setCallback(DateiCallback callback)
+	public void setCallback(DateiCallback zuSetzenderCallback)
 	{
-		zyklen = callback;
+		zyklen = zuSetzenderCallback;
 	}
 
 	@FXML
 	protected void geheInOrdner()
 	{
-		if(zugehörigesFile.isDirectory())
+		if(callback != null)
 		{
-			zyklen.geheInVerzeichnis(dateiName.getText());
+			if(callback.isDirectory())
+			{
+				zyklen.geheInVerzeichnis(dateiName.getText());
+			}
+			else
+			{
+				zyklen.klickAufDatei(callback);
+			}
 		}
-		else
-		{
-			zyklen.klickAufDatei(zugehörigesFile);
-		}
-
 	}
 }

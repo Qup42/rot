@@ -9,6 +9,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+//Diese Klasse wird nicht mehr gebraucht. Eine Verwalterklasse wird sich um die erstellung etc. kümmern.
+@Deprecated
 public class Dokumente extends Application{
 
 	Stage stage;

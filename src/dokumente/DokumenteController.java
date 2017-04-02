@@ -17,9 +17,15 @@ public class DokumenteController implements Initializable, DateiCallback {
 	FlowPane dokumenteFlowPane;
 
 	private DokumenteWerkzeug werkzeug = new DokumenteWerkzeug();
+	private DokumenteCallback callback;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+	}
+
+	public void setCallback(DokumenteCallback zuSetzenderCallback)
+	{
+		callback = zuSetzenderCallback;
 	}
 
 	public Parent erstelleDateiObjeckt(String beschriftung) {
@@ -88,7 +94,9 @@ public class DokumenteController implements Initializable, DateiCallback {
 
 	@Override
 	public void klickAufDatei(File file) {
-		//TODO: An die Verwaltungsklasse weitergeben
-		System.out.println("Es wurde auf eine Datei geklickt.");
+		if(callback != null)
+		{
+			callback.ausgewählteDatei(file);
+		}
 	}
 }
