@@ -53,7 +53,7 @@ public class DokumenteWerkzeug implements DokumentWerkzeugSpecification{
 	@Override
 	public void geheInUnterverzeichnis(String verzeichnisName) throws IllegalArgumentException {
 		File neuesFile = new File(aktuellesVerzeichnis.getPath() + File.separator + verzeichnisName);
-		if(neuesFile.isFile())
+		if(neuesFile.isDirectory())
 		{
 			aktuellesVerzeichnis = neuesFile;
 		}
