@@ -5,10 +5,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.Main;
+import application.MenuCallback;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 
@@ -20,16 +24,18 @@ public class DokumenteController implements Initializable, DateiCallback {
 	TextField suche;
 
 	private DokumenteWerkzeug werkzeug = new DokumenteWerkzeug();
-	private DokumenteCallback callback;
+	private DokumenteCallback documentCallback;
+	private MenuCallback menuCallback;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		refreshDisplay();
 	}
 
-	public void setCallback(DokumenteCallback zuSetzenderCallback)
+	public void setCallback(DokumenteCallback documentCallback,MenuCallback menuCallback)
 	{
-		callback = zuSetzenderCallback;
+		this.documentCallback = documentCallback;
+		this.menuCallback = menuCallback;
 	}
 
 	private Parent erstelleLeerenOrdner(String beschriftung) {
@@ -82,12 +88,6 @@ public class DokumenteController implements Initializable, DateiCallback {
 	}
 
 	@FXML
-	protected void zurück()
-	{
-		callback.beendeDokumente();
-	}
-
-	@FXML
 	protected void suchen()
 	{
 		//System.out.println(werkzeug.searchFor(suche.getText().toString()));
@@ -113,9 +113,33 @@ public class DokumenteController implements Initializable, DateiCallback {
 
 	@Override
 	public void klickAufDatei(File file) {
-		if(callback != null)
+		if(documentCallback != null)
 		{
-			callback.ausgewählteDatei(file);
+			documentCallback.ausgewählteDatei(file);
+		}
+	}
+	
+	public void onMenuClick(ActionEvent event)
+	{
+		MenuItem item = (MenuItem) event.getSource();
+		switch(item.getText())
+		{
+		case "Internet":
+			menuCallback.onItemClicked(Main.Menu.Internet); break;
+		case "Dokumente":
+			menuCallback.onItemClicked(Main.Menu.Dokumente); break;
+		case "Schulbuch":
+			menuCallback.onItemClicked(Main.Menu.Schulbuch); break;
+		case "Klasse wechseln":
+			menuCallback.onItemClicked(Main.Menu.Klasse); break;
+		case "Programme":
+			menuCallback.onItemClicked(Main.Menu.Programme); break;
+		case "Bildschirmübertragung":
+			menuCallback.onItemClicked(Main.Menu.Bildschirm); break;
+		case "Abmelden":
+			menuCallback.onItemClicked(Main.Menu.Abmelden); break;
+		case "Zurück":
+			menuCallback.onItemClicked(Main.Menu.Zurück); break;
 		}
 	}
 }
