@@ -42,7 +42,6 @@ public class Main extends Application implements LoginCallback{
 
 	            AnchorPane layout  = (AnchorPane) loader.load();
 	        	LoginController controller = loader.getController();
-	        	controller.setData();
 	        	controller.setCallback(this);
 	            // Show the scene containing the root layout.
 	            Scene scene = new Scene(layout);
@@ -69,14 +68,4 @@ public class Main extends Application implements LoginCallback{
 	            e.printStackTrace();
 	        }
 		}
-
-<<<<<<< HEAD
-=======
-		public static void main(String[] args) {
-			launch(args);
-		}
-
-
-		
->>>>>>> branch 'master' of https://mint2017.rot@gitlab.com/hpi-schuelerklub/mint2017/rot.git
 }
