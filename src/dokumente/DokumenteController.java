@@ -28,7 +28,7 @@ public class DokumenteController implements Initializable, DateiCallback {
 		callback = zuSetzenderCallback;
 	}
 
-	public Parent erstelleDateiObjeckt(String beschriftung) {
+	private Parent erstelleLeerenOrdner(String beschriftung) {
 		FXMLLoader datei = new FXMLLoader(getClass().getResource("Datei.fxml"));
 		Parent root = null;
 		try {
@@ -39,11 +39,11 @@ public class DokumenteController implements Initializable, DateiCallback {
 
 		DateiController controller = datei.getController();
 		controller.setCallback(this);
-		controller.setzeDatei(beschriftung);
+		controller.setzeLeerenOrdner(beschriftung);
 		return root;
 	}
 
-	public Parent erstelleDateiObjeckt(File file) {
+	private Parent erstelleDateiObjeckt(File file) {
 		FXMLLoader datei = new FXMLLoader(getClass().getResource("Datei.fxml"));
 		Parent root = null;
 		try {
@@ -64,7 +64,7 @@ public class DokumenteController implements Initializable, DateiCallback {
 		File[] files = werkzeug.gebeAlleInVerzeichnis();
 
 		if (files.length == 0) {
-			dokumenteFlowPane.getChildren().add(erstelleDateiObjeckt("Hier sind keine Dateien"));
+			dokumenteFlowPane.getChildren().add(erstelleLeerenOrdner("Hier sind keine Dateien"));
 			return;
 		}
 

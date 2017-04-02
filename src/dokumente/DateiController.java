@@ -17,17 +17,21 @@ public class DateiController implements Initializable{
 	@FXML
 	ImageView icon;
 
-	File callback;
+	File file;
 
-	DateiCallback zyklen;
+	DateiCallback callback;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 	}
 
-	public void setzeDatei(String name)
+	public void setzeLeerenOrdner(String name)
 	{
 		dateiName.setText(name);
+
+		File iconFile = new File("src/application/img/tumbleweed.jpg");
+		Image imageIcon = new Image(iconFile.toURI().toString());
+		icon.setImage(imageIcon);
 	}
 
 	public void setzeDatei(File file)
@@ -38,26 +42,26 @@ public class DateiController implements Initializable{
 		Image imageIcon = new Image(iconFile.toURI().toString());
 		icon.setImage(imageIcon);
 
-		callback = file;
+		this.file = file;
 	}
 
 	public void setCallback(DateiCallback zuSetzenderCallback)
 	{
-		zyklen = zuSetzenderCallback;
+		callback = zuSetzenderCallback;
 	}
 
 	@FXML
 	protected void geheInOrdner()
 	{
-		if(callback != null)
+		if(file != null)
 		{
-			if(callback.isDirectory())
+			if(file.isDirectory())
 			{
-				zyklen.geheInVerzeichnis(dateiName.getText());
+				callback.geheInVerzeichnis(dateiName.getText());
 			}
 			else
 			{
-				zyklen.klickAufDatei(callback);
+				callback.klickAufDatei(file);
 			}
 		}
 	}
