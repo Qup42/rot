@@ -27,8 +27,6 @@ public class Main extends Application {
 
 
 
-@FXML
-private Button menu;
 
 
 
@@ -74,23 +72,8 @@ private Button menu;
             e.printStackTrace();
         }
 
-        menu.setGraphic(new ImageView(Menü));
-
+        
     }
 
-  //  Image Farbwahl = new Image (getClass().getResourceAsStream(//"C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\cmyk.png"));
-  //  Image Stift    = new Image("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\pencil.png");
- //   Image Hilfe    = new Image("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\question.png");
-    Image Menü     = new Image (getClass().getResourceAsStream("img\\menu.png"));
- /*   Image CloudUp  = new Image("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\cloud-computing");
-    Image Schulbücher = new Image ("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\books.png");
-    Image Suche = new Image ("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\lupe.png");
-    Image Radierer = new Image ("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\eraser.png");
-    Image Geometrie = new Image ("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\Geometrie.png");
-    Image Hintergrundstruktur = new Image ("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\background.png");
-    Image Textmarker = new Image ("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\marker.png");
-    Image Home       = new Image  ("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\home.png");
-    Image zurück     = new Image ("C:\\Users\\Mint2017.Rot\\Documents\\workspace\\Speedboard\\src\\img\\back.png");
-
-*/
+  
 }
