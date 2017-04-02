@@ -11,7 +11,10 @@ public class LoginController implements Initializable{
 
 	@FXML
 	public ComboBox fach;
+	@FXML
 	public ComboBox klasse;
+
+	private LoginCallback callback;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -28,7 +31,12 @@ public class LoginController implements Initializable{
 
 	public void login(ActionEvent e)
 	{
-		//TODO: Machen
+		callback.login((String)klasse.getValue(), (String)fach.getValue(), "");
+	}
+
+	public void setCallback(LoginCallback loginCallback)
+	{
+		callback = loginCallback;
 	}
 }
 
