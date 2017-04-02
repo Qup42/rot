@@ -23,6 +23,7 @@
 						<MenuItem fx:id="programme" mnemonicParsing="false" text="Programme" />
 						<MenuItem fx:id="bildschirmuebertragung" mnemonicParsing="false" text="Bildschirmübertragung" />
 						<MenuItem fx:id="abmelden" mnemonicParsing="false" text="Abmelden" />
+						<MenuItem fx:id="zurück" mnemonicParsing="false" text="Zurück" onAction="#zurück" />
 					</items>
 				</MenuButton>
 				<ImageView fitHeight="24.0" fitWidth="31.0" layoutX="82.0" layoutY="138.0" style="visibility: true;">
