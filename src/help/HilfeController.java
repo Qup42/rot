@@ -4,24 +4,22 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
-public class HilfeController implements Initializable{
+public class HilfeController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
 	}
-
-	@FXML
-	AnchorPane basis;
 
 	@FXML
 	static ImageView menu;
@@ -58,33 +56,63 @@ public class HilfeController implements Initializable{
 	@FXML
 	static ImageView cloud_upload;
 
-	public static ArrayList<HBox> startHilfe(){
+	public static ArrayList<HBox> startHilfe() {
 		ArrayList<HBox> hboxen = new ArrayList<>();
+		standard(hboxen);
+		hboxen.add(labeln(stift, Hilfe.STIFT));
+		hboxen.add(labeln(marker, Hilfe.MARKER));
+		hboxen.add(labeln(radierer, Hilfe.RADIERER));
+		hboxen.add(labeln(farbe, Hilfe.FARBE));
+		hboxen.add(labeln(hintergrund, Hilfe.HINTERGRUND));
+		hboxen.add(labeln(geometrie, Hilfe.GEOMETRIE));
 		return hboxen;
 	}
 
-	public static ArrayList<HBox> dokumentenHilfe(){
-		return standard();
+	public static ArrayList<HBox> dokumentenHilfe() {
+		ArrayList<HBox> hboxen = new ArrayList<>();
+		standard(hboxen);
+
+		return hboxen;
 	}
 
-	public static ArrayList<HBox> schulbuchHilfe(){
-		return standard();
+	public static ArrayList<HBox> schulbuchHilfe() {
+		ArrayList<HBox> hboxen = new ArrayList<>();
+		standard(hboxen);
+		return hboxen;
 	}
 
-	public static ArrayList<HBox> standard(){
-		ArrayList<HBox> temp = new ArrayList<>();
+	public static ArrayList<HBox> standard(ArrayList<HBox> temp) {
 		temp.add(labeln(menu, Hilfe.MENU));
 		temp.add(labeln(suche, Hilfe.SUCHE));
-		temp.add(labeln(menu, Hilfe.MENU));
-		temp.add(labeln(menu, Hilfe.MENU));
+		temp.add(labeln(hilfe, Hilfe.HILFE));
+		temp.add(labeln(cloud_upload, Hilfe.CLOUD_UPLOAD));
 		return temp;
 	}
 
-	public static HBox labeln(ImageView button, String hilfestellung){
+	public static HBox labeln(ImageView button, String hilfestellung) {
 		Label label = new Label(hilfestellung);
-		label.setStyle("-fx-background-color: coral; -fx-padding: 10px; -fx-opacity: 0.5;");
+		label.setStyle("-fx-background-color: coral; -fx-padding: 10px;");
+		label.setWrapText(true);
 		HBox hbox = new HBox();
 		hbox.getChildren().add(label);
+		hbox.setMaxWidth(75);
+		hbox.setMaxHeight(100);
+		hbox.setOpacity(0.3);
+		hbox.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent e) {
+				if (hbox.getMaxHeight() == 200) {
+					hbox.setOpacity(0.3);
+					hbox.setMaxWidth(75);
+					hbox.setMaxHeight(100);
+				} else {
+					hbox.setMaxHeight(200);
+					hbox.setMaxWidth(150);
+					hbox.setOpacity(1);
+				}
+			}
+		});
+		hbox.setAlignment(value);
 		return hbox;
 	}
 }
