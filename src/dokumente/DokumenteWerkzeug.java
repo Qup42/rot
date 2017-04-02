@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class DokumenteWerkzeug implements DokumentWerkzeugSpecification{
 
 	File aktuellesVerzeichnis;
-	String rootDir = "C:\\Users\\Mint2017.Rot\\Desktop";
-	//String rootDir = System.getProperty("user.home");
+	//String rootDir = "C:\\Users\\Mint2017.Rot\\Desktop";
+	String rootDir = System.getProperty("user.home");
 	//String rootDir = "C:\\Users\\Mint2017.Rot\\Desktop\\eclipse\\features";
 
 	public DokumenteWerkzeug()
@@ -16,7 +16,7 @@ public class DokumenteWerkzeug implements DokumentWerkzeugSpecification{
 
 	public void einVerzeichnisHoch()
 	{
-		if(Arrays.asList(aktuellesVerzeichnis.listRoots()).contains(aktuellesVerzeichnis))
+		if(Arrays.asList(File.listRoots()).contains(aktuellesVerzeichnis))
 			return;
 
 		aktuellesVerzeichnis = aktuellesVerzeichnis.getParentFile();
@@ -40,7 +40,7 @@ public class DokumenteWerkzeug implements DokumentWerkzeugSpecification{
 
 	@Override
 	public void geheInVerzeichnis(File verzeichnis) throws IllegalArgumentException {
-		if(verzeichnis.isFile())
+		if(verzeichnis.isDirectory())
 		{
 			aktuellesVerzeichnis = verzeichnis;
 		}
@@ -61,6 +61,11 @@ public class DokumenteWerkzeug implements DokumentWerkzeugSpecification{
 		{
 			throw new IllegalArgumentException("Der angegebene Pfad ist keine Verzeichnis");
 		}
+	}
+
+	@Override
+	public File[] gebeAlleDateienInVerzeichnis() {
+		return aktuellesVerzeichnis.listFiles();
 	}
 
 }
