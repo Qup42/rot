@@ -9,13 +9,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.image.Image;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.FlowPane;
 
 public class DokumenteController implements Initializable, ZyklischeAbhängigkeiten{
 
 	@FXML
-	GridPane dokumenteGridPane;
+	FlowPane dokumenteFlowPane;
 
 	private DokumenteWerkzeug werkzeug = new DokumenteWerkzeug();
 
@@ -57,7 +56,7 @@ public class DokumenteController implements Initializable, ZyklischeAbhängigkeit
 
 	public void displayFiles()
 	{
-		dokumenteGridPane.getChildren().clear();
+		dokumenteFlowPane.getChildren().clear();
 
 		File[] files = werkzeug.gebeAlleDateienInVerzeichnis();
 
@@ -66,7 +65,7 @@ public class DokumenteController implements Initializable, ZyklischeAbhängigkeit
 
 		if(länge == 0)
 		{
-		    dokumenteGridPane.add(erstelleDateiObjeckt("Hier sind keine Dateien"), 0, 0);
+			dokumenteFlowPane.getChildren().add(erstelleDateiObjeckt("Hier sind keine Dateien"));
 		    return;
 		}
 
@@ -74,7 +73,7 @@ public class DokumenteController implements Initializable, ZyklischeAbhängigkeit
 		{
 			for(int x = 0; x < 8; x++)
 			{
-			    dokumenteGridPane.add(erstelleDateiObjeckt(files[zähler]), x, y);
+				dokumenteFlowPane.getChildren().add(erstelleDateiObjeckt(files[zähler]));
 
 				zähler++;
 				if(zähler == länge)
