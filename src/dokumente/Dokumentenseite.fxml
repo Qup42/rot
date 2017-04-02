@@ -6,81 +6,64 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.layout.FlowPane?>
 
-<AnchorPane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dokumente.DokumenteController">
 	<children>
 		<AnchorPane layoutX="-52.0" layoutY="-110.0" minHeight="900.0" minWidth="1600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
 			<children>
 				<Line endX="1385.0" layoutX="209.0" layoutY="179.0" startX="-150.0" />
 				<MenuButton fx:id="menu" layoutX="63.0" layoutY="138.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="39.0">
-              <items>
-                <MenuItem fx:id="internet" mnemonicParsing="false" text="Internet" />
-                <MenuItem fx:id="dokumente" mnemonicParsing="false" text="Dokumente" />
-                  <MenuItem fx:id="schulbuch" mnemonicParsing="false" text="Schulbuch" />
-                  <MenuItem fx:id="klasse_wechseln" mnemonicParsing="false" text="Klasse wechseln" />
-                  <MenuItem fx:id="programme" mnemonicParsing="false" text="Programme" />
-                  <MenuItem fx:id="bildschirmuebertragung" mnemonicParsing="false" text="Bildschirmübertragung" />
-                  <MenuItem fx:id="abmelden" mnemonicParsing="false" text="Abmelden" />
-              </items>
-<<<<<<< HEAD
-            </MenuButton>
+					<items>
+						<MenuItem fx:id="internet" mnemonicParsing="false" text="Internet" />
+						<MenuItem fx:id="dokumente" mnemonicParsing="false" text="Dokumente" />
+						<MenuItem fx:id="schulbuch" mnemonicParsing="false" text="Schulbuch" />
+						<MenuItem fx:id="klasse_wechseln" mnemonicParsing="false" text="Klasse wechseln" />
+						<MenuItem fx:id="programme" mnemonicParsing="false" text="Programme" />
+						<MenuItem fx:id="bildschirmuebertragung" mnemonicParsing="false" text="Bildschirmübertragung" />
+						<MenuItem fx:id="abmelden" mnemonicParsing="false" text="Abmelden" />
+					</items>
+				</MenuButton>
 				<TextField fx:id="suche" layoutX="155.0" layoutY="135.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />
-            <ImageView fitHeight="24.0" fitWidth="31.0" layoutX="68.0" layoutY="141.0">
-               <image>
-                  <Image url="@../application/img/menu.png" />
-               </image>
-            </ImageView>
-            <ImageView layoutX="1487.0" layoutY="140.0">
-               <image>
-                  <Image url="@../application/img/question.png" />
-               </image>
-            </ImageView>
-            <ImageView layoutX="424.0" layoutY="138.0">
-               <image>
-                  <Image url="@../application/img/lupe.png" />
-               </image>
-            </ImageView>
-            <ImageView layoutX="1537.0" layoutY="138.0">
-               <image>
-                  <Image url="@../application/img/cloud-computing.png" />
-               </image>
-            </ImageView>
-            <ImageView layoutX="86.0" layoutY="205.0">
-               <image>
-                  <Image url="@../application/img/back.png" />
-               </image>
-            </ImageView>
-            <ImageView layoutX="135.0" layoutY="201.0">
-               <image>
-                  <Image url="@../application/img/home.png" />
-               </image>
-            </ImageView>
-=======
-            </MenuButton>-->
+				<ImageView fitHeight="24.0" fitWidth="31.0" layoutX="68.0" layoutY="141.0">
+					<image>
+						<Image url="@../application/img/menu.png" />
+					</image>
+				</ImageView>
+				<ImageView layoutX="1487.0" layoutY="140.0">
+					<image>
+						<Image url="@../application/img/question.png" />
+					</image>
+				</ImageView>
+				<ImageView layoutX="424.0" layoutY="138.0">
+					<image>
+						<Image url="@../application/img/lupe.png" />
+					</image>
+				</ImageView>
+				<ImageView layoutX="1537.0" layoutY="138.0">
+					<image>
+						<Image url="@../application/img/cloud-computing.png" />
+					</image>
+				</ImageView>
+				<ImageView layoutX="86.0" layoutY="205.0" onMouseClicked="#eineEbeneHoch">
+					<image>
+						<Image url="@../application/img/back.png" />
+					</image>
+				</ImageView>
+				<ImageView layoutX="135.0" layoutY="201.0" onMouseClicked="#homeDir">
+					<image>
+						<Image url="@../application/img/home.png" />
+					</image>
+				</ImageView>
 				<TextField fx:id="suche" layoutX="133.0" layoutY="135.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" promptText="Suche" />
-				<Button fx:id="suche_los" layoutX="395.0" layoutY="135.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="48.0" text="Suche" />
-				            <Button fx:id="hilfe" layoutX="1475.0" layoutY="137.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="49.0" text="Hilfe" />
-				<Button layoutX="74.0" layoutY="204.0" mnemonicParsing="false" onAction="#eineEbeneHoch" prefHeight="29.0" prefWidth="51.0" text="zurück" />
-				<Button layoutX="133.0" layoutY="204.0" mnemonicParsing="false" onAction="#homeDir" prefHeight="29.0" prefWidth="49.0" text="Home" />
-            <GridPane fx:id="dokumente" layoutX="74.0" layoutY="249.0" prefHeight="634.0" prefWidth="1500.0">
-              <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
->>>>>>> branch 'master' of https://mint2017.rot@gitlab.com/hpi-schuelerklub/mint2017/rot.git
+				<FlowPane fx:id="dokumenteFlowPane" layoutX="74.0" layoutY="249.0" prefHeight="634.0" prefWidth="1500.0">
+
+				</FlowPane>
+
 			</children>
 		</AnchorPane>
 	</children>
