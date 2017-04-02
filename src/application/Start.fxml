@@ -9,7 +9,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
       <AnchorPane fx:id="basis" layoutX="-263.0" layoutY="-295.0" minHeight="900.0" minWidth="1600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
@@ -27,7 +26,7 @@
             </MenuButton>
             <Button fx:id="cloud_upload" layoutX="1523.0" layoutY="310.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="39.0" text="Could upload" />
             <Button fx:id="geometrie" layoutX="1417.0" layoutY="310.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="39.0" text="Geometrie" />
-            <Button fx:id="hilfe" layoutX="1470.0" layoutY="310.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="39.0" text="Hilfe" />
+            <Button fx:id="hilfe" layoutX="1470.0" layoutY="310.0" mnemonicParsing="false" onAction="#hilfe" prefHeight="25.0" prefWidth="39.0" text="Hilfe" />
             <Button fx:id="marker" layoutX="991.0" layoutY="310.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="32.0" text="Marker" />
             <Button fx:id="stift" layoutX="935.0" layoutY="310.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="32.0" text="Stift" />
             <TextField fx:id="suche" layoutX="422.0" layoutY="308.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />

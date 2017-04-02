@@ -53,18 +53,19 @@ public class HilfeController implements Initializable{
 	Button cloud_upload;
 
 	@FXML
-	protected void startHilfe(){
+	public static void startHilfe(){
 		Label label = new Label("Sally collects seashells on the seashore");
 		label.setStyle("-fx-background-color: coral; -fx-padding: 10px;");
+	
 	}
 
 	@FXML
-	protected void dokumentenHilfe(){
+	public static void dokumentenHilfe(){
 
 	}
 
 	@FXML
-	protected void schulbuchHilfe(){
+	public static void schulbuchHilfe(){
 
 	}
 }

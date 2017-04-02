@@ -1,5 +1,7 @@
 package application;
 
+import help.HilfeController;
+
 import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
@@ -8,6 +10,7 @@ import java.util.ResourceBundle;
 
 import javax.imageio.ImageIO;
 
+import help.Hilfe;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -23,6 +26,8 @@ import javafx.stage.Stage;
 
 public class MainController implements Initializable{
 
+	Seiten aktuelleSeite = Seiten.STARTSEITE;
+
 	@FXML
 	public Canvas canvas;
 
@@ -32,9 +37,8 @@ public class MainController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 
 	}
-	//Ich bin ein KOmmentar und damit eine Aenderung!!!
-	public void makeDrawable()
-	{
+
+	public void makeDrawable(){
 		graphicsContext = canvas.getGraphicsContext2D();
 		canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
 	                new EventHandler<MouseEvent>(){
@@ -58,8 +62,7 @@ public class MainController implements Initializable{
 	        });
 	}
 
-	public void save(Stage primaryStage)
-	{
+	public void save(Stage primaryStage){
 		FileChooser fileChooser = new FileChooser();
 
         //Set extension filter
@@ -80,5 +83,19 @@ public class MainController implements Initializable{
 
             }
         }
+	}
+
+	public void hilfe(){
+		switch(aktuelleSeite){
+		case STARTSEITE:
+			HilfeController.startHilfe();
+			break;
+		case DOKUMENTENSEITE:
+			HilfeController.dokumentenHilfe();
+			break;
+		case SCHULBUCHSEITE:
+			HilfeController.schulbuchHilfe();
+			break;
+			}
 	}
 }
