@@ -7,12 +7,8 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.Parent;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 
 public class DokumenteController implements Initializable, ZyklischeAbhängigkeiten{
 
@@ -27,16 +23,29 @@ public class DokumenteController implements Initializable, ZyklischeAbhängigkeit
 
 	public void displayFiles()
 	{
-		/*
-		dokumente.setHgap(10);
-		dokumente.setVgap(10);
-		dokumente.setPadding(new Insets(0, 10, 0, 10));*/
-
 		dokumente.getChildren().clear();
 
 		String[] dateien = werkzeug.gebeAllesInVerzeichnis();
+
 		int zähler = 0;
 		int länge = dateien.length;
+
+		if(länge == 0)
+		{
+			FXMLLoader datei = new FXMLLoader(getClass().getResource("Datei.fxml"));
+		    Parent root = null;
+			try {
+				root = datei.load();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		    DateiController controller = datei.getController();
+		    controller.setCallback(this);
+		    controller.setzeDatei("Hier sind keine Dateien");
+		    dokumente.add(root, 0, 0);
+		    return;
+		}
 
 		for(int y = 0; y < 3; y++)
 		{
@@ -47,7 +56,6 @@ public class DokumenteController implements Initializable, ZyklischeAbhängigkeit
 				try {
 					root = datei.load();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 

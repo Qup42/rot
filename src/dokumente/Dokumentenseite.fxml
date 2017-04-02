@@ -24,11 +24,11 @@
                   <MenuItem fx:id="abmelden" mnemonicParsing="false" text="Abmelden" />
               </items>
             </MenuButton>-->
-				<TextField fx:id="suche" layoutX="133.0" layoutY="135.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />
+				<TextField fx:id="suche" layoutX="133.0" layoutY="135.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" promptText="Suche" />
 				<Button fx:id="suche_los" layoutX="395.0" layoutY="135.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="48.0" text="Suche" />
 				            <Button fx:id="hilfe" layoutX="1475.0" layoutY="137.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="49.0" text="Hilfe" />
-				<Button fx:id="zurueck" layoutX="74.0" layoutY="204.0" mnemonicParsing="false" onAction="#eineEbeneHoch" prefHeight="29.0" prefWidth="51.0" text="zurück" />
-				<Button fx:id="home" layoutX="133.0" layoutY="204.0" mnemonicParsing="false" onAction="#homeDir" prefHeight="29.0" prefWidth="49.0" text="Home" />
+				<Button layoutX="74.0" layoutY="204.0" mnemonicParsing="false" onAction="#eineEbeneHoch" prefHeight="29.0" prefWidth="51.0" text="zurück" />
+				<Button layoutX="133.0" layoutY="204.0" mnemonicParsing="false" onAction="#homeDir" prefHeight="29.0" prefWidth="49.0" text="Home" />
             <GridPane fx:id="dokumente" layoutX="74.0" layoutY="249.0" prefHeight="634.0" prefWidth="1500.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
