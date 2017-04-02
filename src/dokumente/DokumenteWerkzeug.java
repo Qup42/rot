@@ -4,11 +4,16 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.PathMatcher;
+import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class DokumenteWerkzeug implements DokumentWerkzeugSpecification {
 
@@ -67,10 +72,50 @@ public class DokumenteWerkzeug implements DokumentWerkzeugSpecification {
 		}
 	}
 
+	public ArrayList<String> searchFor(String name)
+	//public void searchFor(String pattern)
+	{
+		final ArrayList<String> ergebnisse = new ArrayList<>();
+		try {
+			Files.walkFileTree(Paths.get("C:\\Users\\Mint2017.Rot\\Desktop"), new SimpleFileVisitor<Path>() {
+
+				Pattern pattern = Pattern.compile(name);
+				private PathMatcher matcher = FileSystems.getDefault().getPathMatcher("glob:" + name);
+
+				// Compares the glob pattern against
+				// the file or directory name.
+				void find(Path file) {
+					String nameStr = file.getFileName().toString();
+					//Path name = file.getFileName();
+					Matcher matcher = pattern.matcher(nameStr);
+					if(matcher.find())
+					{
+						System.out.println("Hallo");
+					}
+					if (file.getFileName() != null && (".*"+name+".*").matches(nameStr)) {
+						ergebnisse.add(file.toString());
+						System.out.println(file);
+					}
+				}
+
+				// Invoke the pattern matching
+				// method on each file.
+				@Override
+				public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
+					find(file);
+					return FileVisitResult.CONTINUE;
+				}
+			});
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ergebnisse;
+	}
+
 	public static class Finder extends SimpleFileVisitor<Path> {
 
 		private final PathMatcher matcher;
-		private int numMatches = 0;
 
 		Finder(String pattern) {
 			matcher = FileSystems.getDefault().getPathMatcher("glob:" + pattern);
@@ -81,15 +126,8 @@ public class DokumenteWerkzeug implements DokumentWerkzeugSpecification {
 		void find(Path file) {
 			Path name = file.getFileName();
 			if (name != null && matcher.matches(name)) {
-				numMatches++;
 				System.out.println(file);
 			}
-		}
-
-		// Prints the total number of
-		// matches to standard out.
-		void done() {
-			System.out.println("Matched: " + numMatches);
 		}
 
 		// Invoke the pattern matching

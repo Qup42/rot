@@ -9,12 +9,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 
 public class DokumenteController implements Initializable, DateiCallback {
 
 	@FXML
 	FlowPane dokumenteFlowPane;
+	@FXML
+	TextField suche;
 
 	private DokumenteWerkzeug werkzeug = new DokumenteWerkzeug();
 	private DokumenteCallback callback;
@@ -76,6 +79,12 @@ public class DokumenteController implements Initializable, DateiCallback {
 		{
 			dokumenteFlowPane.getChildren().add(erstelleDateiObjeckt(file));
 		}
+	}
+
+	@FXML
+	protected void suchen()
+	{
+		//System.out.println(werkzeug.searchFor(suche.getText().toString()));
 	}
 
 	@FXML
