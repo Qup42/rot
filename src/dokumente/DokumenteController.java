@@ -21,6 +21,7 @@ public class DokumenteController implements Initializable, DateiCallback {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		refreshDisplay();
 	}
 
 	public void setCallback(DokumenteCallback zuSetzenderCallback)
@@ -28,7 +29,7 @@ public class DokumenteController implements Initializable, DateiCallback {
 		callback = zuSetzenderCallback;
 	}
 
-	public Parent erstelleDateiObjeckt(String beschriftung) {
+	private Parent erstelleLeerenOrdner(String beschriftung) {
 		FXMLLoader datei = new FXMLLoader(getClass().getResource("Datei.fxml"));
 		Parent root = null;
 		try {
@@ -39,11 +40,11 @@ public class DokumenteController implements Initializable, DateiCallback {
 
 		DateiController controller = datei.getController();
 		controller.setCallback(this);
-		controller.setzeDatei(beschriftung);
+		controller.setzeLeerenOrdner(beschriftung);
 		return root;
 	}
 
-	public Parent erstelleDateiObjeckt(File file) {
+	private Parent erstelleDateiObjeckt(File file) {
 		FXMLLoader datei = new FXMLLoader(getClass().getResource("Datei.fxml"));
 		Parent root = null;
 		try {
@@ -58,13 +59,16 @@ public class DokumenteController implements Initializable, DateiCallback {
 		return root;
 	}
 
-	public void displayFiles() {
+	@Deprecated
+	public void displayFiles() {}
+
+	private void refreshDisplay() {
 		dokumenteFlowPane.getChildren().clear();
 
 		File[] files = werkzeug.gebeAlleInVerzeichnis();
 
 		if (files.length == 0) {
-			dokumenteFlowPane.getChildren().add(erstelleDateiObjeckt("Hier sind keine Dateien"));
+			dokumenteFlowPane.getChildren().add(erstelleLeerenOrdner("Hier sind keine Dateien"));
 			return;
 		}
 
@@ -77,19 +81,19 @@ public class DokumenteController implements Initializable, DateiCallback {
 	@FXML
 	protected void homeDir() {
 		werkzeug.geheInHomeVerzeichnis();
-		displayFiles();
+		refreshDisplay();
 	}
 
 	@FXML
 	protected void eineEbeneHoch() {
 		werkzeug.einVerzeichnisHoch();
-		displayFiles();
+		refreshDisplay();
 	}
 
 	@Override
 	public void geheInVerzeichnis(String name) {
 		werkzeug.geheInUnterverzeichnis(name);
-		displayFiles();
+		refreshDisplay();
 	}
 
 	@Override
