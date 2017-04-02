@@ -6,6 +6,7 @@ import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javax.imageio.ImageIO;
@@ -137,7 +138,8 @@ public class MainController implements Initializable{
 	@FXML
 	AnchorPane untersteEbene;
 
-	private void hilfeAnzeigen(HBox hbox){
-		untersteEbene.getChildren().add(hbox);
+	private void hilfeAnzeigen(ArrayList<HBox> hbox){
+		for(HBox aktuell : hbox)
+		untersteEbene.getChildren().add(aktuell);
 	}
 }

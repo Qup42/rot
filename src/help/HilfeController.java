@@ -1,12 +1,15 @@
 package help;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
@@ -21,53 +24,67 @@ public class HilfeController implements Initializable{
 	AnchorPane basis;
 
 	@FXML
-	Button menu;
+	static ImageView menu;
 	@FXML
-	Button internet;
+	static ImageView suche;
 	@FXML
-	Button dokumente;
+	static ImageView internet;
 	@FXML
-	Button schulbuch;
+	static ImageView dokumente;
 	@FXML
-	Button klasse_wechseln;
+	static ImageView schulbuch;
 	@FXML
-	Button programme;
+	static ImageView klasse_wechseln;
 	@FXML
-	Button bildschirmuebertragung;
+	static ImageView programme;
 	@FXML
-	Button abmelden;
+	static ImageView bildschirmuebertragung;
 	@FXML
-	Button stift;
+	static ImageView abmelden;
 	@FXML
-	Button marker;
+	static ImageView stift;
 	@FXML
-	Button radierer;
+	static ImageView marker;
 	@FXML
-	Button farbe;
+	static ImageView radierer;
 	@FXML
-	Button hintergrund;
+	static ImageView farbe;
 	@FXML
-	Button geometrie;
+	static ImageView hintergrund;
 	@FXML
-	Button hilfe;
+	static ImageView geometrie;
 	@FXML
-	Button cloud_upload;
+	static ImageView hilfe;
+	@FXML
+	static ImageView cloud_upload;
 
-	public static HBox startHilfe(){
-		Label label = new Label("Sally collects seashells on the seashore");
-		label.setStyle("-fx-background-color: coral; -fx-padding: 10px;");
+	public static ArrayList<HBox> startHilfe(){
+		ArrayList<HBox> hboxen = new ArrayList<>();
+		return hboxen;
+	}
+
+	public static ArrayList<HBox> dokumentenHilfe(){
+		return standard();
+	}
+
+	public static ArrayList<HBox> schulbuchHilfe(){
+		return standard();
+	}
+
+	public static ArrayList<HBox> standard(){
+		ArrayList<HBox> temp = new ArrayList<>();
+		temp.add(labeln(menu, Hilfe.MENU));
+		temp.add(labeln(suche, Hilfe.SUCHE));
+		temp.add(labeln(menu, Hilfe.MENU));
+		temp.add(labeln(menu, Hilfe.MENU));
+		return temp;
+	}
+
+	public static HBox labeln(ImageView button, String hilfestellung){
+		Label label = new Label(hilfestellung);
+		label.setStyle("-fx-background-color: coral; -fx-padding: 10px; -fx-opacity: 0.5;");
 		HBox hbox = new HBox();
 		hbox.getChildren().add(label);
 		return hbox;
-	}
-
-	@FXML
-	public static void dokumentenHilfe(){
-
-	}
-
-	@FXML
-	public static void schulbuchHilfe(){
-
 	}
 }

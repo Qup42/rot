@@ -5,7 +5,7 @@ public class Hilfe {
 	public static final String HOME = "Hier koennen Sie direkt auf den Startbildschirm zurueckkehren.";
 	public static final String ZURUECK = "Hier koennen Sie eine Seite zurueckgehen.";
 
-	public static final String MENUE = "Hier werden die Menuoptionen angezeigt.";
+	public static final String MENU = "Hier werden die Menuoptionen angezeigt.";
 	public static final String SUCHE = "Geben Sie das gewuenschte Programm oder das Datum der gewuenschten Stunde ein. Sie koennen auch Funktionen suchen.";
 	public static final String STIFT = "Der Stift macht duenne Linien zum Schreiben. Wenn er blau umrandet ist, ist er aktiviert. Zum Deaktivieren bitte auf eine andere Funktion (z.B. Marker...) klicken.";
 	public static final String MARKER = "Kann Textpassagen markieren. Wenn er blau umrandet ist, ist er aktiviert. Zum Deaktivieren bitte auf eine andere Funktion (z.B. Marker...) klicken.";
