@@ -55,7 +55,7 @@ public class DokumenteController implements Initializable, ZyklischeAbhängigkeit
 	public void displayFiles() {
 		dokumenteFlowPane.getChildren().clear();
 
-		File[] files = werkzeug.gebeAlleDateienInVerzeichnis();
+		File[] files = werkzeug.gebeAlleInVerzeichnis();
 
 		if (files.length == 0) {
 			dokumenteFlowPane.getChildren().add(erstelleDateiObjeckt("Hier sind keine Dateien"));
@@ -84,5 +84,11 @@ public class DokumenteController implements Initializable, ZyklischeAbhängigkeit
 	public void geheInVerzeichnis(String name) {
 		werkzeug.geheInUnterverzeichnis(name);
 		displayFiles();
+	}
+
+	@Override
+	public void klickAufDatei(File file) {
+		//TODO: An die Verwaltungsklasse weitergeben
+		System.out.println("Es wurde auf eine Datei geklickt.");
 	}
 }
