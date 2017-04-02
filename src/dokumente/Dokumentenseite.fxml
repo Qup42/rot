@@ -8,12 +8,12 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dokumente.DokumenteController">
 	<children>
 		<AnchorPane layoutX="-52.0" layoutY="-110.0" minHeight="900.0" minWidth="1600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
 			<children>
 				<Line endX="1385.0" layoutX="209.0" layoutY="179.0" startX="-150.0" />
-				<MenuButton fx:id="menu" layoutX="279.0" layoutY="307.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="99.0" text="Menu">
+				<!-- <MenuButton fx:id="menu" layoutX="279.0" layoutY="307.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="99.0" text="Menu">
               <items>
                 <MenuItem fx:id="internet" mnemonicParsing="false" text="Internet" />
                 <MenuItem fx:id="dokumente" mnemonicParsing="false" text="Dokumente" />
@@ -23,7 +23,7 @@
                   <MenuItem fx:id="bildschirmuebertragung" mnemonicParsing="false" text="Bildschirmübertragung" />
                   <MenuItem fx:id="abmelden" mnemonicParsing="false" text="Abmelden" />
               </items>
-            </MenuButton>
+            </MenuButton>-->
 				<TextField fx:id="suche" layoutX="133.0" layoutY="135.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />
 				<Button fx:id="suche_los" layoutX="395.0" layoutY="135.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="48.0" text="Suche" />
 				            <Button fx:id="hilfe" layoutX="1475.0" layoutY="137.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="39.0" text="Hilfe" />
