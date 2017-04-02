@@ -14,7 +14,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-public class DokumenteController implements Initializable{
+public class DokumenteController implements Initializable, ZyklischeAbhängigkeiten{
 
 	@FXML
 	GridPane dokumente;
@@ -52,6 +52,7 @@ public class DokumenteController implements Initializable{
 				}
 
 			    DateiController controller = datei.getController();
+			    controller.setCallback(this);
 			    controller.setzeDatei(dateien[zähler]);
 			    dokumente.add(root, x, y);
 
@@ -75,6 +76,12 @@ public class DokumenteController implements Initializable{
 	protected void eineEbeneHoch()
 	{
 		werkzeug.einVerzeichnisHoch();
+		displayFiles();
+	}
+
+	@Override
+	public void geheInVerzeichnis(String name) {
+		werkzeug.geheInUnterverzeichnis(name);
 		displayFiles();
 	}
 }

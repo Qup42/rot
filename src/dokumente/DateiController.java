@@ -15,6 +15,8 @@ public class DateiController implements Initializable{
 	Text dateiName;
 	ImageView icon;
 
+	ZyklischeAbhängigkeiten zyklen;
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 	}
@@ -27,5 +29,16 @@ public class DateiController implements Initializable{
 	public void setzeDatei(File file)
 	{
 		dateiName.setText(file.getName());
+	}
+
+	public void setCallback(ZyklischeAbhängigkeiten callback)
+	{
+		zyklen = callback;
+	}
+
+	@FXML
+	protected void geheInOrdner()
+	{
+		zyklen.geheInVerzeichnis(dateiName.getText());
 	}
 }
