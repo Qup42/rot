@@ -70,4 +70,13 @@ public class Main extends Application implements LoginCallback{
 	        }
 		}
 
+<<<<<<< HEAD
+=======
+		public static void main(String[] args) {
+			launch(args);
+		}
+
+
+		
+>>>>>>> branch 'master' of https://mint2017.rot@gitlab.com/hpi-schuelerklub/mint2017/rot.git
 }

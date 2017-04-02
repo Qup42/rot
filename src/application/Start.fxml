@@ -11,7 +11,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<AnchorPane fx:id="untersteEbene" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
       <AnchorPane fx:id="basis" layoutX="-263.0" layoutY="-295.0" minHeight="900.0" minWidth="1600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
          <children>
@@ -28,60 +28,60 @@
               </items>
             </MenuButton>
             <TextField fx:id="suche" layoutX="422.0" layoutY="308.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />
-            <ScrollPane layoutX="1466.0" layoutY="385.0" prefHeight="493.0" prefWidth="126.0" style="-fx-background-color: WHITE;">
+            <ScrollPane fx:id="seiten" layoutX="1466.0" layoutY="385.0" prefHeight="493.0" prefWidth="126.0" style="-fx-background-color: WHITE;">
                <content>
                   <DialogPane fx:id="seiten" prefHeight="493.0" prefWidth="107.0" style="-fx-background-color: white;" />
                </content>
             </ScrollPane>
             <Canvas fx:id="canvas" height="515.0" layoutX="264.0" layoutY="384.0" width="1145.0" />
-            <ImageView layoutX="282.0" layoutY="308.0">
+            <ImageView fx:id="menu" layoutX="282.0" layoutY="308.0">
                <image>
                   <Image url="@img/menu.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="688.0" layoutY="309.0">
+            <ImageView fx:id="suche" layoutX="688.0" layoutY="309.0">
                <image>
                   <Image url="@img/lupe.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="28.0" fitWidth="36.0" layoutX="1541.0" layoutY="310.0">
+            <ImageView fx:id="cloud_upload" fitHeight="28.0" fitWidth="36.0" layoutX="1541.0" layoutY="311.0">
                <image>
                   <Image url="@img/cloud-computing.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="1494.0" layoutY="313.0">
+            <ImageView fx:id="hilfe" layoutX="1495.0" layoutY="312.0" onMousePressed="#hilfe">
                <image>
                   <Image url="@img/question.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="1456.0" layoutY="311.0">
+            <ImageView fx:id="geometrie" layoutX="1456.0" layoutY="311.0">
                <image>
                   <Image url="@img/Geometrie.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="945.0" layoutY="313.0" onMouseClicked="#onPenClick">
+            <ImageView fx:id="stift" layoutX="945.0" layoutY="313.0" onMouseClicked="#onPenClick">
                <image>
-                  <Image  url="@img/pencil.png" />
+                  <Image url="@img/pencil.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="995.0" layoutY="311.0" onMouseClicked="#onMarkerClick">
+            <ImageView fx:id="marker" layoutX="995.0" layoutY="311.0" onMouseClicked="#onMarkerClick">
                <image>
                   <Image url="@img/marker.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="1049.0" layoutY="312.0" onMouseClicked="#onEraserClick">
+            <ImageView fx:id="radierer" layoutX="1049.0" layoutY="312.0" onMouseClicked="#onEraserClick">
                <image>
                   <Image url="@img/eraser.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="1087.0" layoutY="307.0">
+            <ImageView fx:id="hintergrund" layoutX="1087.0" layoutY="307.0">
                <image>
                   <Image url="@img/background.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="1135.0" layoutY="310.0">
+            <ImageView fx:id="farbe" layoutX="1135.0" layoutY="310.0">
                <image>
-                  <Image url="@../../../../Documents/workspace/Speedboard/src/img/cmyk.png" />
+                  <Image url="@img/cmyk.png" />
                </image>
             </ImageView>
          </children>
