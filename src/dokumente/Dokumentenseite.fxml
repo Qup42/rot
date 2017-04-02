@@ -6,11 +6,8 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.shape.Line?>
 
 <AnchorPane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dokumente.DokumenteController">
 	<children>
@@ -26,6 +23,7 @@
 						<MenuItem fx:id="programme" mnemonicParsing="false" text="Programme" />
 						<MenuItem fx:id="bildschirmuebertragung" mnemonicParsing="false" text="Bildschirmübertragung" />
 						<MenuItem fx:id="abmelden" mnemonicParsing="false" text="Abmelden" />
+						<MenuItem fx:id="zurück" mnemonicParsing="false" text="Zurück" onAction="#zurück" />
 					</items>
 				</MenuButton>
 				<ImageView fitHeight="24.0" fitWidth="31.0" layoutX="82.0" layoutY="138.0" style="visibility: true;">
@@ -38,7 +36,7 @@
 						<Image url="@../application/img/question.png" />
 					</image>
 				</ImageView>
-				<ImageView layoutX="424.0" layoutY="138.0">
+				<ImageView layoutX="424.0" layoutY="138.0" onMouseClicked="#suchen">
 					<image>
 						<Image url="@../application/img/lupe.png" />
 					</image>
@@ -58,7 +56,7 @@
 						<Image url="@../application/img/home.png" />
 					</image>
 				</ImageView>
-				<TextField fx:id="suche" layoutX="133.0" layoutY="135.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" promptText="Suche" />
+				<TextField fx:id="suche" layoutX="133.0" layoutY="135.0" onAction="#suchen" opacity="0.4" prefHeight="29.0" prefWidth="248.0" promptText="Suche" />
 				<FlowPane fx:id="dokumenteFlowPane" layoutX="74.0" layoutY="249.0" prefHeight="634.0" prefWidth="1500.0">
 
 				</FlowPane>

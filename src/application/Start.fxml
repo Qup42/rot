@@ -16,6 +16,23 @@
       <AnchorPane fx:id="basis" layoutX="-263.0" layoutY="-295.0" minHeight="900.0" minWidth="1600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
          <children>
             <ColorPicker fx:id="colorPicker" layoutX="1132.0" layoutY="308.0" onAction="#changeColor" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;" />
+            <ColorPicker fx:id="colorPicker" layoutX="1132.0" layoutY="308.0" onAction="#changeColor" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;" />
+            <ImageView fx:id="rubberb" layoutX="1045.0" layoutY="308.0" visible="false">
+               <image>
+                  <Image url="@img/hellgrün.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="markerb" layoutX="991.0" layoutY="309.0" visible="false">
+               <image>
+                  <Image url="@img/hellgrün.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="pencilb" layoutX="941.0" layoutY="308.0" visible="false">
+               <image>
+                  <Image url="@img/hellgrün.png" />
+               </image>
+            </ImageView>
+            <ColorPicker fx:id="colorPicker" layoutX="1132.0" layoutY="308.0" onAction="#changeColor" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;" />
             <MenuButton fx:id="menu_menu" layoutX="279.0" layoutY="306.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;">
               <items>
                 <MenuItem fx:id="internet_menu" mnemonicParsing="false" text="Internet" />
@@ -33,7 +50,7 @@
                   <DialogPane fx:id="seiten" prefHeight="493.0" prefWidth="107.0" style="-fx-background-color: white;" />
                </content>
             </ScrollPane>
-            <Canvas fx:id="canvas" height="515.0" layoutX="264.0" layoutY="384.0" width="1145.0" />
+            <Canvas fx:id="canvas" height="539.0" layoutX="369.0" layoutY="350.0" width="1145.0" />
             <ImageView fx:id="menu" layoutX="282.0" layoutY="308.0">
                <image>
                   <Image url="@img/menu.png" />
@@ -82,6 +99,11 @@
             <ImageView fx:id="farbe" layoutX="1135.0" layoutY="310.0">
                <image>
                   <Image url="@img/cmyk.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="rubbish" layoutX="1403.0" layoutY="307.0" onMouseClicked="#onrubbishClick">
+               <image>
+                  <Image url="@img/rubbish.png" />
                </image>
             </ImageView>
          </children>

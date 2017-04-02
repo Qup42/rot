@@ -1,7 +1,9 @@
 package application;
 
+import java.io.File;
 import java.io.IOException;
 
+import dokumente.DokumenteCallback;
 import dokumente.DokumenteController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 
 
-public class Main extends Application implements LoginCallback, ChooseDocumentCallback{
+public class Main extends Application implements LoginCallback, MenuCallback, DokumenteCallback{
 
 	 private Stage primaryStage;
 
@@ -20,9 +22,7 @@ public class Main extends Application implements LoginCallback, ChooseDocumentCa
 		public void start(Stage primaryStage) {
 	        this.primaryStage = primaryStage;
 	        this.primaryStage.setTitle("SpeedBoard");
-
 	        showLogin();
-
 		}
 
 		public static void main(String[] args) {
@@ -31,11 +31,21 @@ public class Main extends Application implements LoginCallback, ChooseDocumentCa
 
 		@Override
 		public void login(String klasse, String fach, String lehrkörper) {
-			showMain();
+			showMain(null);
 		}
 		@Override
-		public void onDocumentClicked() {
-			showDocuments();
+		public void onItemClicked(Menu item) {
+			switch(item)
+			{
+			case Dokumente:
+				showDocuments();
+			}
+			
+		}
+		@Override
+		public void ausgewählteDatei(File datei) {
+			showMain(datei);
+
 		}
 
 		private void showLogin()
@@ -55,7 +65,7 @@ public class Main extends Application implements LoginCallback, ChooseDocumentCa
 	            e.printStackTrace();
 	        }
 		}
-		private void showMain()
+		private void showMain(File file)
 		{
 			try {
 	            // Load layout from fxml file.
@@ -65,6 +75,8 @@ public class Main extends Application implements LoginCallback, ChooseDocumentCa
 	        	MainController controller = loader.getController();
 	        	controller.makeDrawable();
 	        	controller.setListener(this);
+	        	if(file != null)
+	        		controller.setBackground(file);
 	            // Show the scene containing the root layout.
 	            Scene scene = new Scene(layout);
 	            primaryStage.setScene(scene);
@@ -82,7 +94,7 @@ public class Main extends Application implements LoginCallback, ChooseDocumentCa
 
 	            AnchorPane layout  = (AnchorPane) loader.load();
 	        	DokumenteController controller = loader.getController();
-	        	controller.displayFiles();
+	        	controller.setCallback(this);
 	            // Show the scene containing the root layout.
 	            Scene scene = new Scene(layout);
 	            primaryStage.setScene(scene);
@@ -91,6 +103,26 @@ public class Main extends Application implements LoginCallback, ChooseDocumentCa
 	            e.printStackTrace();
 	        }
 		}
+
+
+		@Override
+		public void beendeDokumente() {
+			//TODO: Hartmut: mach mal!
+		}
+
+		public static enum Menu
+		{
+			Internet,
+			Dokumente,
+			Schulbuch,
+			Klasse,
+			Programme,
+			Bildschim,
+			Abmelden,
+			Zurück
+		}
+
+
 
 
 }
