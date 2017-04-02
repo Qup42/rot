@@ -19,73 +19,22 @@ public class HilfeController implements Initializable {
 
 	}
 
-	@FXML
-	static ImageView menu;
-	@FXML
-	static ImageView suche;
-	@FXML
-	static ImageView internet;
-	@FXML
-	static ImageView dokumente;
-	@FXML
-	static ImageView schulbuch;
-	@FXML
-	static ImageView klasse_wechseln;
-	@FXML
-	static ImageView programme;
-	@FXML
-	static ImageView bildschirmuebertragung;
-	@FXML
-	static ImageView abmelden;
-	@FXML
-	static ImageView stift;
-	@FXML
-	static ImageView marker;
-	@FXML
-	static ImageView radierer;
-	@FXML
-	static ImageView farbe;
-	@FXML
-	static ImageView hintergrund;
-	@FXML
-	static ImageView geometrie;
-	@FXML
-	static ImageView hilfe;
-	@FXML
-	static ImageView cloud_upload;
-
-	public static ArrayList<HBox> startHilfe() {
+	public static ArrayList<HBox> startHilfe(ImageView menu, String text) {
 		ArrayList<HBox> hboxen = new ArrayList<>();
-		standard(hboxen);
-		hboxen.add(labeln(stift, Hilfe.STIFT));
-		hboxen.add(labeln(marker, Hilfe.MARKER));
-		hboxen.add(labeln(radierer, Hilfe.RADIERER));
-		hboxen.add(labeln(farbe, Hilfe.FARBE));
-		hboxen.add(labeln(hintergrund, Hilfe.HINTERGRUND));
-		hboxen.add(labeln(geometrie, Hilfe.GEOMETRIE));
+		hboxen.add(labeln(menu, text));
 		return hboxen;
 	}
 
 	public static ArrayList<HBox> dokumentenHilfe() {
 		ArrayList<HBox> hboxen = new ArrayList<>();
-		standard(hboxen);
-
 		return hboxen;
 	}
 
 	public static ArrayList<HBox> schulbuchHilfe() {
 		ArrayList<HBox> hboxen = new ArrayList<>();
-		standard(hboxen);
 		return hboxen;
 	}
 
-	public static ArrayList<HBox> standard(ArrayList<HBox> temp) {
-		temp.add(labeln(menu, Hilfe.MENU));
-		temp.add(labeln(suche, Hilfe.SUCHE));
-		temp.add(labeln(hilfe, Hilfe.HILFE));
-		temp.add(labeln(cloud_upload, Hilfe.CLOUD_UPLOAD));
-		return temp;
-	}
 
 	public static HBox labeln(ImageView image, String hilfestellung) {
 		Label label = new Label(hilfestellung);
@@ -110,8 +59,8 @@ public class HilfeController implements Initializable {
 				}
 			}
 		});
-		//hbox.setLayoutX(image.getLayoutX());
-		//hbox.setLayoutY(image.getLayoutY()+ 20);
+		hbox.setLayoutX(image.getLayoutX());
+		hbox.setLayoutY(image.getLayoutY());
 		return hbox;
 	}
 }

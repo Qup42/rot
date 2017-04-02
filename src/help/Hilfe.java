@@ -12,6 +12,7 @@ public class Hilfe {
 	public static final String RADIERER = "Kann Markierungen oder auch Linien und Text durch Drueberstreichen entfernen. Wenn er blau umrandet ist, ist er aktiviert. Zum Deaktivieren bitte auf eine andere Funktion (z.B. Marker...) klicken.";
 	public static final String FARBE = "Hier kann die Schrift- bzw. Markerfarbe geaendert werden, wenn der Stift bzw. Marker ausgewahhlt ist.";
 	public static final String HINTERGRUND = "Hier koennen Sie den Hintergrund aendern: liniert, kariert oder weiss";
+	public static final String DELETE = "Loescht das aktuelle Tafelbild.";
 	public static final String GEOMETRIE = "Hier koennen Sie Geometriefunktionen nutzen. Sie koennen Graphen zeichnen und mit Funktionen arbeiten.";
 	public static final String HILFE = "Hier werden Informationen zur aktuellen Seite angezeigt. Die Hilfe wird durch Anklicken aktiviert und durch erneutes Anklicken deaktiviert.";
 	public static final String CLOUD_UPLOAD = "Hier koennen Sie ihr aktuelles Tafelbild in die Cloud stellen, sodass es von Zuhause angeschaut werden kann.";

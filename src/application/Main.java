@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 
+import dokumente.DokumenteController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -11,7 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 
 
-public class Main extends Application implements LoginCallback{
+public class Main extends Application implements LoginCallback, ChooseDocumentCallback{
 
 	 private Stage primaryStage;
 
@@ -31,7 +32,10 @@ public class Main extends Application implements LoginCallback{
 		@Override
 		public void login(String klasse, String fach, String lehrkörper) {
 			showMain();
-
+		}
+		@Override
+		public void onDocumentClicked() {
+			showDocuments();
 		}
 
 		private void showLogin()
@@ -60,6 +64,7 @@ public class Main extends Application implements LoginCallback{
 	            AnchorPane layout  = (AnchorPane) loader.load();
 	        	MainController controller = loader.getController();
 	        	controller.makeDrawable();
+	        	controller.setListener(this);
 	            // Show the scene containing the root layout.
 	            Scene scene = new Scene(layout);
 	            primaryStage.setScene(scene);
@@ -68,4 +73,24 @@ public class Main extends Application implements LoginCallback{
 	            e.printStackTrace();
 	        }
 		}
+
+		private void showDocuments()
+		{
+			try {
+	            // Load layout from fxml file.
+	        	FXMLLoader loader = new FXMLLoader(getClass().getResource("../dokumente/Dokumentenseite.fxml"));
+
+	            AnchorPane layout  = (AnchorPane) loader.load();
+	        	DokumenteController controller = loader.getController();
+	        	controller.displayFiles();
+	            // Show the scene containing the root layout.
+	            Scene scene = new Scene(layout);
+	            primaryStage.setScene(scene);
+	            primaryStage.show();
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+		}
+
+
 }
