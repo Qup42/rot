@@ -3,7 +3,6 @@ package werkzeug;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -33,6 +32,8 @@ public class Marker implements Initializable{
 	            public void handle(MouseEvent event) {
 	                graphicsContext.beginPath();
 	                graphicsContext.moveTo(event.getX(), event.getY());
+	                graphicsContext.setGlobalAlpha(0.5);
+	                graphicsContext.setLineWidth(5.0);
 	                graphicsContext.stroke();
 	            }
 	        });
@@ -43,6 +44,8 @@ public class Marker implements Initializable{
 	            @Override
 	            public void handle(MouseEvent event) {
 	                graphicsContext.lineTo(event.getX(), event.getY());
+	                graphicsContext.setGlobalAlpha(0.5);
+	                graphicsContext.setLineWidth(5.0);
 	                graphicsContext.stroke();
 	            }
 	        });
