@@ -23,6 +23,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
@@ -52,6 +53,8 @@ public class MainController implements Initializable{
 	public ImageView rubberb;
 	public ImageView rubbish;
 
+	@FXML
+	Slider slider;
 
 
 	private GraphicsContext graphicsContext;
@@ -117,13 +120,13 @@ public class MainController implements Initializable{
 		switch(currentTool)
 		{
 		case Stift:
-			alpha = 1; lineWidth = 1;
+			alpha = 1; lineWidth = 1*slider.getValue();
 			break;
 		case Marker:
-			alpha = 0.1; lineWidth = 10;
+			alpha = 0.1; lineWidth = 10*slider.getValue();
 			break;
 		case Radierer:
-			alpha = 1; lineWidth = 10; tempColor = Color.WHITE;
+			alpha = 1; lineWidth = 10*slider.getValue(); tempColor = Color.WHITE;
 			break;
 		}
 		graphicsContext.setGlobalAlpha(alpha);
@@ -212,7 +215,7 @@ public class MainController implements Initializable{
 		case "Dokumente":
 			listener.onItemClicked(Main.Menu.Dokumente);;
 		}
-		
+
 	}
 
 	public void onrubbishClick()

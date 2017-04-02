@@ -6,6 +6,7 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -105,6 +106,7 @@
                   <Image url="@img/rubbish.png" />
                </image>
             </ImageView>
+            <Slider fx:id="slider" blockIncrement="1.0" layoutX="800.0" layoutY="312.0" majorTickUnit="5.0" max="5.0" minorTickCount="5" showTickLabels="true" />
          </children>
       </AnchorPane>
    </children>
