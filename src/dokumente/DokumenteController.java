@@ -1,11 +1,14 @@
 package dokumente;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -22,21 +25,57 @@ public class DokumenteController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 	}
 
-	public void addFiles()
+	public void displayFiles()
 	{
+		/*
 		dokumente.setHgap(10);
 		dokumente.setVgap(10);
-		dokumente.setPadding(new Insets(0, 10, 0, 10));
+		dokumente.setPadding(new Insets(0, 10, 0, 10));*/
 
-		for (String string : werkzeug.gebeAllesInVerzeichnis())
+		dokumente.getChildren().clear();
+
+		String[] dateien = werkzeug.gebeAllesInVerzeichnis();
+		int zähler = 0;
+		int länge = dateien.length;
+
+		for(int y = 0; y < 3; y++)
 		{
-			//Test
-			ImageView icon = new ImageView();
-			Text name = new Text(string);
-			VBox datei = new VBox(8, icon, name);
+			for(int x = 0; x < 8; x++)
+			{
+				FXMLLoader datei = new FXMLLoader(getClass().getResource("Datei.fxml"));
+			    Parent root = null;
+				try {
+					root = datei.load();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
-			dokumente.add(datei, 2, 2);
+			    DateiController controller = datei.getController();
+			    controller.setzeDatei(dateien[zähler]);
+			    dokumente.add(root, x, y);
+
+				zähler++;
+				if(zähler == länge)
+				{
+					return;
+				}
+			}
 		}
+	}
+
+	@FXML
+	protected void homeDir()
+	{
+		werkzeug.geheInHomeVerzeichnis();
+		displayFiles();
+	}
+
+	@FXML
+	protected void eineEbeneHoch()
+	{
+		werkzeug.einVerzeichnisHoch();
+		displayFiles();
 	}
 }
 

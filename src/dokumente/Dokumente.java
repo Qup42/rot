@@ -31,7 +31,7 @@ public class Dokumente extends Application{
 
 	    stage = primaryStage;
 
-	    controller.addFiles();
+	    controller.displayFiles();
     }
 
 	public void close()
