@@ -57,8 +57,7 @@ public class DateiController implements Initializable{
 		}
 		else
 		{
-			//TODO: Klick auf die Datei weitergeben
-			System.out.println("Es wurde auf eine Datei geklickt.");
+			zyklen.klickAufDatei(zugehörigesFile);
 		}
 
 	}
