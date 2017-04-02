@@ -10,6 +10,6 @@ public interface DokumentWerkzeugSpecification {
 	public void geheInVerzeichnis(File verzeichnis) throws IllegalArgumentException;
 	public void geheInUnterverzeichnis(String verzeichnisName) throws IllegalArgumentException;
 
-
 	public String[] gebeAllesInVerzeichnis();
+	public File[] gebeAlleDateienInVerzeichnis();
 }
