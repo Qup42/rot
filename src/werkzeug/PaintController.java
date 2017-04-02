@@ -1,4 +1,4 @@
-package application;
+package werkzeug;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -9,19 +9,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 
 public class PaintController implements Initializable{
 
 	@FXML
 	public Canvas canvas;
-	
+
 	public GraphicsContext graphicsContext;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+
 	}
 
 	public void init()
