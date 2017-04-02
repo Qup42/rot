@@ -12,11 +12,9 @@ import java.util.ResourceBundle;
 import javax.imageio.ImageIO;
 
 import javafx.embed.swing.SwingFXUtils;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.WritableImage;
@@ -87,7 +85,7 @@ public class MainController implements Initializable{
 			alpha = 1; lineWidth = 1;
 			break;
 		case Marker:
-			alpha = 0.1; lineWidth = 10; 
+			alpha = 0.1; lineWidth = 10;
 			break;
 		case Radierer:
 			alpha = 1; lineWidth = 5; tempStroke = Color.WHITE; tempFill = Color.WHITE;
@@ -99,7 +97,7 @@ public class MainController implements Initializable{
         graphicsContext.setFill(tempFill);
         graphicsContext.stroke();
 	}
-	
+
 	public void save(Stage primaryStage){
 		FileChooser fileChooser = new FileChooser();
 
@@ -144,10 +142,10 @@ public class MainController implements Initializable{
 		for(HBox aktuell : hbox)
 		untersteEbene.getChildren().add(aktuell);
 	}
-	
-	
-	
-	
+
+
+
+
 	public void onPenClick()
 	{
 		makeDrawable(MainController.Tool.Stift);
@@ -160,5 +158,5 @@ public class MainController implements Initializable{
 	{
 		makeDrawable(MainController.Tool.Radierer);
 	}
-	
+
 }

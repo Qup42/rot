@@ -60,7 +60,7 @@
             </ImageView>
             <ImageView layoutX="945.0" layoutY="313.0" onMouseClicked="#onPenClick">
                <image>
-                  <Image  url="@img/pencil.png" />
+                  <Image url="@img/pencil.png" />
                </image>
             </ImageView>
             <ImageView layoutX="995.0" layoutY="311.0" onMouseClicked="#onMarkerClick">
@@ -80,7 +80,7 @@
             </ImageView>
             <ImageView layoutX="1135.0" layoutY="310.0">
                <image>
-                  <Image url="@../../../../Documents/workspace/Speedboard/src/img/cmyk.png" />
+                  <Image url="@img/cmyk.png" />
                </image>
             </ImageView>
          </children>
