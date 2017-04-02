@@ -28,7 +28,6 @@
 						<MenuItem fx:id="abmelden" mnemonicParsing="false" text="Abmelden" />
 					</items>
 				</MenuButton>
-				<TextField fx:id="suche" layoutX="155.0" layoutY="135.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />
 				<ImageView fitHeight="24.0" fitWidth="31.0" layoutX="82.0" layoutY="138.0" style="visibility: true;">
 					<image>
 						<Image url="@../application/img/menu.png" />
@@ -59,30 +58,10 @@
 						<Image url="@../application/img/home.png" />
 					</image>
 				</ImageView>
-<<<<<<< HEAD
-				<GridPane fx:id="dokumenteGridPane" layoutX="74.0" layoutY="249.0" prefHeight="634.0" prefWidth="1500.0">
-					<columnConstraints>
-						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-					</columnConstraints>
-					<rowConstraints>
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-					</rowConstraints>
-				</GridPane>
-=======
 				<TextField fx:id="suche" layoutX="133.0" layoutY="135.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" promptText="Suche" />
 				<FlowPane fx:id="dokumenteFlowPane" layoutX="74.0" layoutY="249.0" prefHeight="634.0" prefWidth="1500.0">
 
 				</FlowPane>
->>>>>>> branch 'master' of https://mint2017.rot@gitlab.com/hpi-schuelerklub/mint2017/rot.git
 
 			</children>
 		</AnchorPane>

@@ -7,6 +7,6 @@
 <AnchorPane onMouseClicked="#geheInOrdner" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dokumente.DateiController">
    <children>
       <ImageView fx:id="icon" fitHeight="200.0" fitWidth="200.0" layoutX="3.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0" />
-      <Text fx:id="dateiName" layoutX="8.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.9999966621399" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.000003337860107" />
+      <Text fx:id="dateiName" layoutX="8.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="199.9999966621399" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.000003337860107" />
    </children>
 </AnchorPane>

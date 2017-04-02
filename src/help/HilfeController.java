@@ -1,15 +1,20 @@
 package help;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 
-public class HilfeController implements Initializable{
+public class HilfeController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -17,55 +22,97 @@ public class HilfeController implements Initializable{
 	}
 
 	@FXML
-	AnchorPane basis;
+	static ImageView menu;
+	@FXML
+	static ImageView suche;
+	@FXML
+	static ImageView internet;
+	@FXML
+	static ImageView dokumente;
+	@FXML
+	static ImageView schulbuch;
+	@FXML
+	static ImageView klasse_wechseln;
+	@FXML
+	static ImageView programme;
+	@FXML
+	static ImageView bildschirmuebertragung;
+	@FXML
+	static ImageView abmelden;
+	@FXML
+	static ImageView stift;
+	@FXML
+	static ImageView marker;
+	@FXML
+	static ImageView radierer;
+	@FXML
+	static ImageView farbe;
+	@FXML
+	static ImageView hintergrund;
+	@FXML
+	static ImageView geometrie;
+	@FXML
+	static ImageView hilfe;
+	@FXML
+	static ImageView cloud_upload;
 
-	@FXML
-	Button menu;
-	@FXML
-	Button internet;
-	@FXML
-	Button dokumente;
-	@FXML
-	Button schulbuch;
-	@FXML
-	Button klasse_wechseln;
-	@FXML
-	Button programme;
-	@FXML
-	Button bildschirmuebertragung;
-	@FXML
-	Button abmelden;
-	@FXML
-	Button stift;
-	@FXML
-	Button marker;
-	@FXML
-	Button radierer;
-	@FXML
-	Button farbe;
-	@FXML
-	Button hintergrund;
-	@FXML
-	Button geometrie;
-	@FXML
-	Button hilfe;
-	@FXML
-	Button cloud_upload;
+	public static ArrayList<HBox> startHilfe() {
+		ArrayList<HBox> hboxen = new ArrayList<>();
+		standard(hboxen);
+		hboxen.add(labeln(stift, Hilfe.STIFT));
+		hboxen.add(labeln(marker, Hilfe.MARKER));
+		hboxen.add(labeln(radierer, Hilfe.RADIERER));
+		hboxen.add(labeln(farbe, Hilfe.FARBE));
+		hboxen.add(labeln(hintergrund, Hilfe.HINTERGRUND));
+		hboxen.add(labeln(geometrie, Hilfe.GEOMETRIE));
+		return hboxen;
+	}
 
-	@FXML
-	public static void startHilfe(){
-		Label label = new Label("Sally collects seashells on the seashore");
+	public static ArrayList<HBox> dokumentenHilfe() {
+		ArrayList<HBox> hboxen = new ArrayList<>();
+		standard(hboxen);
+
+		return hboxen;
+	}
+
+	public static ArrayList<HBox> schulbuchHilfe() {
+		ArrayList<HBox> hboxen = new ArrayList<>();
+		standard(hboxen);
+		return hboxen;
+	}
+
+	public static ArrayList<HBox> standard(ArrayList<HBox> temp) {
+		temp.add(labeln(menu, Hilfe.MENU));
+		temp.add(labeln(suche, Hilfe.SUCHE));
+		temp.add(labeln(hilfe, Hilfe.HILFE));
+		temp.add(labeln(cloud_upload, Hilfe.CLOUD_UPLOAD));
+		return temp;
+	}
+
+	public static HBox labeln(ImageView button, String hilfestellung) {
+		Label label = new Label(hilfestellung);
 		label.setStyle("-fx-background-color: coral; -fx-padding: 10px;");
-	
-	}
-
-	@FXML
-	public static void dokumentenHilfe(){
-
-	}
-
-	@FXML
-	public static void schulbuchHilfe(){
-
+		label.setWrapText(true);
+		HBox hbox = new HBox();
+		hbox.getChildren().add(label);
+		hbox.setMaxWidth(75);
+		hbox.setMaxHeight(100);
+		hbox.setOpacity(0.3);
+		hbox.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent e) {
+				if (hbox.getMaxHeight() == 200) {
+					hbox.setOpacity(0.3);
+					hbox.setMaxWidth(75);
+					hbox.setMaxHeight(100);
+				} else {
+					hbox.setMaxHeight(200);
+					hbox.setMaxWidth(150);
+					hbox.setOpacity(1);
+				}
+			}
+		});
+		//hbox.setAlignment(value);
+		return hbox;
 	}
 }
