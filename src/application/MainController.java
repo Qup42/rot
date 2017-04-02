@@ -64,32 +64,34 @@ public class MainController implements Initializable{
 	                setParameters(tool);
 	            }
 	        });
+	            
 	}
 	
 	private void setParameters(Tool tool)
 	{
 		double alpha = 1;
 		double lineWidth = 1;
-		Color tempColor = this.color;
+		Color tempStroke = this.color;
+		Color tempFill = this.color;
 		switch(tool)
 		{
 		case Stift:
 			alpha = 1; lineWidth = 1;
 			break;
 		case Marker:
-			alpha = 0.5; lineWidth = 5;
+			alpha = 0.1; lineWidth = 10; 
 			break;
 		case Radierer:
-			alpha = 1; lineWidth = 5; tempColor = Color.WHITE;
+			alpha = 1; lineWidth = 5; tempStroke = Color.WHITE; tempFill = Color.WHITE;
 			break;
 		}
 		graphicsContext.setGlobalAlpha(alpha);
         graphicsContext.setLineWidth(lineWidth);
-        graphicsContext.setStroke(tempColor);
-        graphicsContext.setFill(tempColor);
+        graphicsContext.setStroke(tempStroke);
+        graphicsContext.setFill(tempFill);
         graphicsContext.stroke();
 	}
-
+	
 	public void save(Stage primaryStage)
 	{
 		FileChooser fileChooser = new FileChooser();
