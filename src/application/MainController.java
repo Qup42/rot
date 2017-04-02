@@ -33,17 +33,22 @@ public class MainController implements Initializable{
 	Seiten aktuelleSeite = Seiten.STARTSEITE;
 
 	@FXML
-	public Canvas canvas;
+	private Canvas canvas;
 	@FXML
-	public ColorPicker colorPicker;;
+	private ColorPicker colorPicker;;
 
-	public GraphicsContext graphicsContext;
-	public Color color = Color.DARKBLUE;
-	public Tool currentTool = Tool.Stift;
+	private GraphicsContext graphicsContext;
+	private Color color = Color.DARKBLUE;
+	private Tool currentTool = Tool.Stift;
+	private ChooseDocumentCallback listener;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
+	}
+	public void setListener(ChooseDocumentCallback listener)
+	{
+		this.listener = listener;
 	}
 
 
@@ -151,12 +156,7 @@ public class MainController implements Initializable{
 	}
 
 
-
-
-
-
-
-
+	
 	public void onPenClick()
 	{
 		currentTool = Tool.Stift;
@@ -169,10 +169,14 @@ public class MainController implements Initializable{
 	{
 		currentTool = Tool.Radierer;
 	}
-	public void changeColor(ActionEvent event)
+	public void changeColor()
 	{
-		ColorPicker colorPicker = (ColorPicker)event.getSource();
 		color = colorPicker.getValue();
 	}
+	public void onDocumentClick()
+	{
+		listener.onDocumentClicked();
+	}
+	
 
 }

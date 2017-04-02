@@ -19,7 +19,7 @@
             <MenuButton fx:id="menu" layoutX="279.0" layoutY="306.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;">
               <items>
                 <MenuItem fx:id="internet" mnemonicParsing="false" text="Internet" />
-                <MenuItem fx:id="dokumente" mnemonicParsing="false" text="Dokumente" />
+                <MenuItem fx:id="dokumente" mnemonicParsing="false" text="Dokumente" onAction="#onDocumentClick"/>
                   <MenuItem fx:id="schulbuch" mnemonicParsing="false" text="Schulbuch" />
                   <MenuItem fx:id="klasse_wechseln" mnemonicParsing="false" text="Klasse wechseln" />
                   <MenuItem fx:id="programme" mnemonicParsing="false" text="Programme" />
