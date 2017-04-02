@@ -42,7 +42,7 @@
                   <MenuItem fx:id="abmelden" mnemonicParsing="false" text="Abmelden" />
               </items>
             </MenuButton>
-            <TextField fx:id="suche" layoutX="422.0" layoutY="308.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />
+            <TextField fx:id="suche" layoutX="422.0" layoutY="308.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" />
             <ScrollPane fx:id="seiten" layoutX="1466.0" layoutY="385.0" prefHeight="493.0" prefWidth="126.0" style="-fx-background-color: WHITE;">
                <content>
                   <DialogPane fx:id="seiten" prefHeight="493.0" prefWidth="107.0" style="-fx-background-color: white;" />
@@ -97,6 +97,11 @@
             <ImageView fx:id="farbe" layoutX="1135.0" layoutY="310.0">
                <image>
                   <Image url="@img/cmyk.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="rubbish" layoutX="1403.0" layoutY="307.0" onMouseClicked="#onrubbishClick">
+               <image>
+                  <Image url="@img/rubbish.png" />
                </image>
             </ImageView>
          </children>

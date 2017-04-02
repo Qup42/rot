@@ -44,10 +44,12 @@ public class MainController implements Initializable{
 	@FXML
 	AnchorPane untersteEbene;
 
+
 	@FXML
 	public ImageView pencilb;
 	public ImageView markerb;
 	public ImageView rubberb;
+	public ImageView rubbish;
 
 
 
@@ -203,5 +205,13 @@ public class MainController implements Initializable{
 	public void onDocumentClick()
 	{
 		listener.onDocumentClicked();
+	}
+
+	public void onrubbishClick()
+	{
+
+		graphicsContext.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+
+
 	}
 }
