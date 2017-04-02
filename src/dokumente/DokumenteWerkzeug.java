@@ -1,11 +1,13 @@
 package dokumente;
 import java.io.File;
+import java.util.Arrays;
 
 public class DokumenteWerkzeug implements DokumentWerkzeugSpecification{
 
 	File aktuellesVerzeichnis;
 	String rootDir = "C:\\Users\\Mint2017.Rot\\Desktop";
 	//String rootDir = System.getProperty("user.home");
+	//String rootDir = "C:\\Users\\Mint2017.Rot\\Desktop\\eclipse\\features";
 
 	public DokumenteWerkzeug()
 	{
@@ -14,6 +16,9 @@ public class DokumenteWerkzeug implements DokumentWerkzeugSpecification{
 
 	public void einVerzeichnisHoch()
 	{
+		if(Arrays.asList(aktuellesVerzeichnis.listRoots()).contains(aktuellesVerzeichnis))
+			return;
+
 		aktuellesVerzeichnis = aktuellesVerzeichnis.getParentFile();
 	}
 
