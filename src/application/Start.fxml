@@ -14,7 +14,8 @@
    <children>
       <AnchorPane fx:id="basis" layoutX="-263.0" layoutY="-295.0" minHeight="900.0" minWidth="1600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
          <children>
-            <MenuButton fx:id="menu" layoutX="279.0" layoutY="306.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="28.0" style="-fx-background-color: white;">
+           <ColorPicker layoutX="1132.0" layoutY="308.0" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;" />
+            <MenuButton fx:id="menu" layoutX="279.0" layoutY="306.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;">
               <items>
                 <MenuItem fx:id="internet" mnemonicParsing="false" text="Internet" />
                 <MenuItem fx:id="dokumente" mnemonicParsing="false" text="Dokumente" />
@@ -28,7 +29,7 @@
             <TextField fx:id="suche" layoutX="422.0" layoutY="308.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />
             <ScrollPane layoutX="1466.0" layoutY="385.0" prefHeight="493.0" prefWidth="126.0" style="-fx-background-color: WHITE;">
                <content>
-                  <DialogPane fx:id="seiten" prefHeight="493.0" prefWidth="111.0" style="-fx-background-color: white;" />
+                  <DialogPane fx:id="seiten" prefHeight="493.0" prefWidth="107.0" style="-fx-background-color: white;" />
                </content>
             </ScrollPane>
             <Canvas fx:id="canvas" height="515.0" layoutX="264.0" layoutY="384.0" width="1145.0" />
@@ -57,27 +58,27 @@
                   <Image url="@img/Geometrie.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="945.0" layoutY="313.0">
+            <ImageView layoutX="945.0" layoutY="313.0" onMouseClicked="#onPenClick">
                <image>
-                  <Image url="@img/pencil.png" />
+                  <Image  url="@img/pencil.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="995.0" layoutY="311.0">
+            <ImageView layoutX="995.0" layoutY="311.0" onMouseClicked="#onMarkerClick">
                <image>
                   <Image url="@img/marker.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="1049.0" layoutY="312.0">
+            <ImageView layoutX="1049.0" layoutY="312.0" onMouseClicked="#onEraserClick">
                <image>
                   <Image url="@img/eraser.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="1142.0" layoutY="307.0">
+            <ImageView layoutX="1087.0" layoutY="307.0">
                <image>
                   <Image url="@img/background.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="1096.0" layoutY="308.0">
+            <ImageView layoutX="1135.0" layoutY="310.0">
                <image>
                   <Image url="@../../../../Documents/workspace/Speedboard/src/img/cmyk.png" />
                </image>
