@@ -31,7 +31,10 @@ public class LoginController implements Initializable{
 
 	public void login(ActionEvent e)
 	{
-		callback.login((String)klasse.getValue(), (String)fach.getValue(), "");
+		if(callback != null)
+		{
+			callback.login((String)klasse.getValue(), (String)fach.getValue(), "");
+		}
 	}
 
 	public void setCallback(LoginCallback loginCallback)
