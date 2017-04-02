@@ -289,10 +289,10 @@ public class MainController implements Initializable {
 	{
 		graphicsContext.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 	}
-	
+
 	public void close()
 	{
 	}
-	
-	
+
+
 }
