@@ -5,7 +5,7 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
-import werkzeug.PaintController;
+//import werkzeug.PaintController;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
@@ -24,8 +24,8 @@ public class Main extends Application {
 	        	FXMLLoader loader = new FXMLLoader(getClass().getResource("Start.fxml"));
 
 	            AnchorPane layout  = (AnchorPane) loader.load();
-	        	PaintController controller = loader.getController();
-	        	controller.init();
+	        	MainController controller = loader.getController();
+	        	controller.makeDrawable();
 	            // Show the scene containing the root layout.
 	            Scene scene = new Scene(layout);
 	            primaryStage.setScene(scene);
