@@ -15,19 +15,19 @@
    <children>
       <AnchorPane fx:id="basis" layoutX="-263.0" layoutY="-295.0" minHeight="900.0" minWidth="1600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
          <children>
-            <ColorPicker fx:id="colorPicker" layoutX="1132.0" layoutY="308.0" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;" onAction="#changeColor"/>
+            <ColorPicker fx:id="colorPicker" layoutX="1132.0" layoutY="308.0" onAction="#changeColor" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;" />
             <MenuButton fx:id="menu" layoutX="279.0" layoutY="306.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;">
               <items>
-                <MenuItem fx:id="internet" mnemonicParsing="false" text="Internet" />
-                <MenuItem fx:id="dokumente" mnemonicParsing="false" text="Dokumente" onAction="#onDocumentClick"/>
-                  <MenuItem fx:id="schulbuch" mnemonicParsing="false" text="Schulbuch" />
-                  <MenuItem fx:id="klasse_wechseln" mnemonicParsing="false" text="Klasse wechseln" />
-                  <MenuItem fx:id="programme" mnemonicParsing="false" text="Programme" />
-                  <MenuItem fx:id="bildschirmuebertragung" mnemonicParsing="false" text="Bildschirmübertragung" />
-                  <MenuItem fx:id="abmelden" mnemonicParsing="false" text="Abmelden" />
+                <MenuItem fx:id="internet" mnemonicParsing="false" onAction="#onMenuClick" text="Internet" />
+                <MenuItem fx:id="dokumente" mnemonicParsing="false" onAction="#onMenuClick" text="Dokumente" />
+                  <MenuItem fx:id="schulbuch" mnemonicParsing="false" onAction="#onMenuClick" text="Schulbuch" />
+                  <MenuItem fx:id="klasse_wechseln" mnemonicParsing="false" onAction="#onMenuClick" text="Klasse wechseln" />
+                  <MenuItem fx:id="programme" mnemonicParsing="false" onAction="#onMenuClick" text="Programme" />
+                  <MenuItem fx:id="bildschirmuebertragung" mnemonicParsing="false" onAction="#onMenuClick" text="Bildschirmübertragung" />
+                  <MenuItem fx:id="abmelden" mnemonicParsing="false" onAction="#onMenuClick" text="Abmelden" />
               </items>
             </MenuButton>
-            <TextField fx:id="suche" layoutX="422.0" layoutY="308.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />
+            <TextField fx:id="suche" layoutX="422.0" layoutY="308.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" promptText="Suche" />
             <ScrollPane fx:id="seiten" layoutX="1466.0" layoutY="385.0" prefHeight="493.0" prefWidth="126.0" style="-fx-background-color: WHITE;">
                <content>
                   <DialogPane fx:id="seiten" prefHeight="493.0" prefWidth="107.0" style="-fx-background-color: white;" />

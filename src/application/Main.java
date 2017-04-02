@@ -14,7 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 
 
-public class Main extends Application implements LoginCallback, ChooseDocumentCallback, DokumenteCallback{
+public class Main extends Application implements LoginCallback, MenuCallback, DokumenteCallback{
 
 	 private Stage primaryStage;
 
@@ -34,8 +34,13 @@ public class Main extends Application implements LoginCallback, ChooseDocumentCa
 			showMain(null);
 		}
 		@Override
-		public void onDocumentClicked() {
-			showDocuments();
+		public void onItemClicked(Menu item) {
+			switch(item)
+			{
+			case Dokumente:
+				showDocuments();
+			}
+			
 		}
 		@Override
 		public void ausgewählteDatei(File datei) {
@@ -102,6 +107,18 @@ public class Main extends Application implements LoginCallback, ChooseDocumentCa
 		@Override
 		public void beendeDokumente() {
 			//TODO: Hartmut: mach mal!
+		}
+
+		public static enum Menu
+		{
+			Internet,
+			Dokumente,
+			Schulbuch,
+			Klasse,
+			Programme,
+			Bildschim,
+			Abmelden,
+			Zurück
 		}
 
 

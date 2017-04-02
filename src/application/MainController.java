@@ -22,6 +22,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.ColorPicker;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
@@ -47,13 +48,13 @@ public class MainController implements Initializable{
 	private GraphicsContext graphicsContext;
 	private Color color = Color.DARKBLUE;
 	private Tool currentTool = Tool.Stift;
-	private ChooseDocumentCallback listener;
+	private MenuCallback listener;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
 	}
-	public void setListener(ChooseDocumentCallback listener)
+	public void setListener(MenuCallback listener)
 	{
 		this.listener = listener;
 	}
@@ -183,9 +184,15 @@ public class MainController implements Initializable{
 	{
 		color = colorPicker.getValue();
 	}
-	public void onDocumentClick()
+	public void onMenuClick(ActionEvent event)
 	{
-		listener.onDocumentClicked();
+		MenuItem item = (MenuItem) event.getSource();
+		switch(item.getText())
+		{
+		case "Dokumente":
+			listener.onItemClicked(Main.Menu.Dokumente);;
+		}
+		
 	}
 
 
