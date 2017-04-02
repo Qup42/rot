@@ -7,11 +7,9 @@ import java.util.ResourceBundle;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
 public class HilfeController implements Initializable {
@@ -89,7 +87,7 @@ public class HilfeController implements Initializable {
 		return temp;
 	}
 
-	public static HBox labeln(ImageView button, String hilfestellung) {
+	public static HBox labeln(ImageView image, String hilfestellung) {
 		Label label = new Label(hilfestellung);
 		label.setStyle("-fx-background-color: coral; -fx-padding: 10px;");
 		label.setWrapText(true);
@@ -97,12 +95,12 @@ public class HilfeController implements Initializable {
 		hbox.getChildren().add(label);
 		hbox.setMaxWidth(75);
 		hbox.setMaxHeight(100);
-		hbox.setOpacity(0.3);
+		hbox.setOpacity(0.2);
 		hbox.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent e) {
 				if (hbox.getMaxHeight() == 200) {
-					hbox.setOpacity(0.3);
+					hbox.setOpacity(0.2);
 					hbox.setMaxWidth(75);
 					hbox.setMaxHeight(100);
 				} else {
@@ -112,7 +110,8 @@ public class HilfeController implements Initializable {
 				}
 			}
 		});
-		//hbox.setAlignment(value);
+		hbox.setLayoutX(image.getLayoutX());
+		hbox.setLayoutY(image.getLayoutY()+ 20);
 		return hbox;
 	}
 }
