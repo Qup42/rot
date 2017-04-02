@@ -5,6 +5,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+//Diese Klasse wird nicht mehr gebraucht. Eine Verwalterklasse wird sich um die erstellung etc. kümmern.
+@Deprecated
 public class LoginUI extends Application{
 
 	Stage stage;
@@ -32,7 +34,7 @@ public class LoginUI extends Application{
 
 	public void close()
 	{
-		stage.close(); 
+		stage.close();
 	}
 
 }
