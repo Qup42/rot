@@ -23,7 +23,6 @@
                   <MenuItem fx:id="bildschirmuebertragung" mnemonicParsing="false" text="Bildschirmübertragung" />
                   <MenuItem fx:id="abmelden" mnemonicParsing="false" text="Abmelden" />
               </items>
-<<<<<<< HEAD
             </MenuButton>
 				<TextField fx:id="suche" layoutX="155.0" layoutY="135.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />
             <ImageView fitHeight="24.0" fitWidth="31.0" layoutX="68.0" layoutY="141.0">
@@ -56,8 +55,8 @@
                   <Image url="@../application/img/home.png" />
                </image>
             </ImageView>
-=======
-            </MenuButton>-->
+
+            </MenuButton>
 				<TextField fx:id="suche" layoutX="133.0" layoutY="135.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" promptText="Suche" />
 				<Button fx:id="suche_los" layoutX="395.0" layoutY="135.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="48.0" text="Suche" />
 				            <Button fx:id="hilfe" layoutX="1475.0" layoutY="137.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="49.0" text="Hilfe" />
@@ -80,7 +79,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
->>>>>>> branch 'master' of https://mint2017.rot@gitlab.com/hpi-schuelerklub/mint2017/rot.git
+
 			</children>
 		</AnchorPane>
 	</children>
