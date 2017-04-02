@@ -82,6 +82,7 @@ public class MainController implements Initializable{
 
 	public void makeDrawable()
 	{
+		pencilb.setVisible(true);
 		graphicsContext = canvas.getGraphicsContext2D();
 		canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
 	                new EventHandler<MouseEvent>(){
