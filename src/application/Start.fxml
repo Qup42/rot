@@ -15,41 +15,26 @@
    <children>
       <AnchorPane fx:id="basis" layoutX="-263.0" layoutY="-295.0" minHeight="900.0" minWidth="1600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
          <children>
-<<<<<<< HEAD
-            <ImageView fx:id="farbeb" fitHeight="40.0" fitWidth="60.0" layoutX="1131.0" layoutY="307.0" visible="false">
+            <ImageView fx:id="rubberb" layoutX="1045.0" layoutY="308.0" visible="false">
                <image>
-                  <Image url="@img/blue.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="backgroundb" layoutX="1087.0" layoutY="309.0" visible="false">
-               <image>
-                  <Image url="@img/blue.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="rubberb" layoutX="1045.0" layoutY="310.0" visible="false">
-               <image>
-                  <Image url="@img/blue.png" />
+                  <Image url="@img/hellgrün.png" />
                </image>
             </ImageView>
             <ImageView fx:id="markerb" layoutX="991.0" layoutY="309.0" visible="false">
                <image>
-                  <Image url="@img/blue.png" />
+                  <Image url="@img/hellgrün.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pencilb" layoutX="945.0" layoutY="310.0" visible="false">
+            <ImageView fx:id="pencilb" layoutX="941.0" layoutY="308.0" visible="false">
                <image>
-                  <Image url="@img/blue.png" />
+                  <Image url="@img/hellgrün.png" />
                </image>
             </ImageView>
-            <ColorPicker layoutX="1137.0" layoutY="310.0" prefHeight="29.0" prefWidth="51.0" style="-fx-background-color: white;" />
-            <MenuButton fx:id="menu" layoutX="279.0" layoutY="306.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="60.0" style="-fx-background-color: white;">
-=======
-            <ColorPicker fx:id="colorPicker" layoutX="1132.0" layoutY="308.0" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;" onAction="#changeColor"/>
+            <ColorPicker fx:id="colorPicker" layoutX="1132.0" layoutY="308.0" onAction="#changeColor" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;" />
             <MenuButton fx:id="menu" layoutX="279.0" layoutY="306.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;">
->>>>>>> branch 'master' of https://mint2017.rot@gitlab.com/hpi-schuelerklub/mint2017/rot.git
               <items>
                 <MenuItem fx:id="internet" mnemonicParsing="false" text="Internet" />
-                <MenuItem fx:id="dokumente" mnemonicParsing="false" text="Dokumente" onAction="#onDocumentClick"/>
+                <MenuItem fx:id="dokumente" mnemonicParsing="false" onAction="#onDocumentClick" text="Dokumente" />
                   <MenuItem fx:id="schulbuch" mnemonicParsing="false" text="Schulbuch" />
                   <MenuItem fx:id="klasse_wechseln" mnemonicParsing="false" text="Klasse wechseln" />
                   <MenuItem fx:id="programme" mnemonicParsing="false" text="Programme" />
@@ -63,13 +48,8 @@
                   <DialogPane fx:id="seiten" prefHeight="493.0" prefWidth="107.0" style="-fx-background-color: white;" />
                </content>
             </ScrollPane>
-<<<<<<< HEAD
-            <Canvas fx:id="canvas" height="515.0" layoutX="294.0" layoutY="420.0" width="1145.0" />
-            <ImageView layoutX="282.0" layoutY="308.0">
-=======
             <Canvas fx:id="canvas" height="515.0" layoutX="264.0" layoutY="384.0" width="1145.0" />
             <ImageView fx:id="menu" layoutX="282.0" layoutY="308.0">
->>>>>>> branch 'master' of https://mint2017.rot@gitlab.com/hpi-schuelerklub/mint2017/rot.git
                <image>
                   <Image url="@img/menu.png" />
                </image>
@@ -94,16 +74,12 @@
                   <Image url="@img/Geometrie.png" />
                </image>
             </ImageView>
-<<<<<<< HEAD
-            <ImageView layoutX="995.0" layoutY="311.0" onMouseClicked="#onMarkerClick">
-=======
             <ImageView fx:id="stift" layoutX="945.0" layoutY="313.0" onMouseClicked="#onPenClick">
                <image>
                   <Image url="@img/pencil.png" />
                </image>
             </ImageView>
             <ImageView fx:id="marker" layoutX="995.0" layoutY="311.0" onMouseClicked="#onMarkerClick">
->>>>>>> branch 'master' of https://mint2017.rot@gitlab.com/hpi-schuelerklub/mint2017/rot.git
                <image>
                   <Image url="@img/marker.png" />
                </image>
@@ -118,21 +94,9 @@
                   <Image url="@img/background.png" />
                </image>
             </ImageView>
-<<<<<<< HEAD
-            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="1137.0" layoutY="312.0">
-=======
             <ImageView fx:id="farbe" layoutX="1135.0" layoutY="310.0">
->>>>>>> branch 'master' of https://mint2017.rot@gitlab.com/hpi-schuelerklub/mint2017/rot.git
                <image>
                   <Image url="@img/cmyk.png" />
-<<<<<<< HEAD
-               </image>
-            </ImageView>
-            <ImageView fx:id="stift" fitHeight="29.0" fitWidth="32.0" layoutX="945.0" layoutY="311.0" onMouseClicked="#onPenClick">
-               <image>
-                  <Image url="@img/pencil.png" />
-=======
->>>>>>> branch 'master' of https://mint2017.rot@gitlab.com/hpi-schuelerklub/mint2017/rot.git
                </image>
             </ImageView>
          </children>

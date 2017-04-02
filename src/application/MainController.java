@@ -2,134 +2,160 @@ package application;
 
 import help.HilfeController;
 
+import java.awt.Desktop;
+import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javax.imageio.ImageIO;
 
-import help.Hilfe;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.ColorPicker;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-public class MainController implements Initializable {
+
+public class MainController implements Initializable{
 
 	Seiten aktuelleSeite = Seiten.STARTSEITE;
 
 	@FXML
-	public Canvas canvas;
+	private Canvas canvas;
+	@FXML
+	private ColorPicker colorPicker;
+	@FXML
+	AnchorPane untersteEbene;
+
 	@FXML
 	public ImageView pencilb;
 	public ImageView markerb;
 	public ImageView rubberb;
-	public ImageView backgroundb;
-	public ImageView farbeb;
-	
 
-	public GraphicsContext graphicsContext;
-	public Color color = Color.DARKBLUE;
+
+
+	private GraphicsContext graphicsContext;
+	private Color color = Color.DARKBLUE;
+	private Tool currentTool = Tool.Stift;
+	private ChooseDocumentCallback listener;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
 	}
+	public void setListener(ChooseDocumentCallback listener)
+	{
+		this.listener = listener;
+	}
+	public void setBackground(File file)
+	{
+		//TODO: set File as Backround
+		//Image image = SwingUtils.toFXImage(ImageIO.read(file));
+	}
+
+
 
 	public enum Tool {
-		Stift, Marker, Radierer
+		Stift,Marker,Radierer
 	}
 
-	public void makeDrawable(Tool tool) {
+
+	public void makeDrawable()
+	{
 		graphicsContext = canvas.getGraphicsContext2D();
-		canvas.addEventHandler(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
+		canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
+	                new EventHandler<MouseEvent>(){
 
-			@Override
-			public void handle(MouseEvent event) {
-				graphicsContext.beginPath();
-				graphicsContext.moveTo(event.getX(), event.getY());
-				setParameters(tool);
-			}
-		});
+	            @Override
+	            public void handle(MouseEvent event) {
+	                graphicsContext.beginPath();
+	                graphicsContext.moveTo(event.getX(), event.getY());
+	                setParameters();
+	            }
+	        });
 
-		canvas.addEventHandler(MouseEvent.MOUSE_DRAGGED, new EventHandler<MouseEvent>() {
+	        canvas.addEventHandler(MouseEvent.MOUSE_DRAGGED,
+	                new EventHandler<MouseEvent>(){
 
-			@Override
-			public void handle(MouseEvent event) {
-				graphicsContext.lineTo(event.getX(), event.getY());
-				graphicsContext.stroke();
-				setParameters(tool);
-			}
-		});
+	            @Override
+	            public void handle(MouseEvent event) {
+	                graphicsContext.lineTo(event.getX(), event.getY());
+	                graphicsContext.stroke();
+	                setParameters();
+	            }
+	        });
 
+	        colorPicker.setValue(Color.DARKBLUE);
 	}
 
-	private void setParameters(Tool tool) {
+	private void setParameters()
+	{
 		double alpha = 1;
 		double lineWidth = 1;
-		Color tempStroke = this.color;
-		Color tempFill = this.color;
-		switch (tool) {
+		Color tempColor = this.color;
+		switch(currentTool)
+		{
 		case Stift:
-			alpha = 1;
-			lineWidth = 1;
+			alpha = 1; lineWidth = 1;
 			break;
 		case Marker:
-			alpha = 0.1;
-			lineWidth = 10;
+			alpha = 0.1; lineWidth = 10;
 			break;
 		case Radierer:
-			alpha = 1;
-			lineWidth = 5;
-			tempStroke = Color.WHITE;
-			tempFill = Color.WHITE;
+			alpha = 1; lineWidth = 10; tempColor = Color.WHITE;
 			break;
 		}
 		graphicsContext.setGlobalAlpha(alpha);
-		graphicsContext.setLineWidth(lineWidth);
-		graphicsContext.setStroke(tempStroke);
-		graphicsContext.setFill(tempFill);
-		graphicsContext.stroke();
+        graphicsContext.setLineWidth(lineWidth);
+        graphicsContext.setStroke(tempColor);
+        graphicsContext.setFill(tempColor);
+        graphicsContext.stroke();
 	}
 
-	public void save(Stage primaryStage) {
+	public void save(Stage primaryStage){
 		FileChooser fileChooser = new FileChooser();
 
-		// Set extension filter
-		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("png files (*.png)", "*.png");
-		fileChooser.getExtensionFilters().add(extFilter);
+        //Set extension filter
+        FileChooser.ExtensionFilter extFilter =
+                new FileChooser.ExtensionFilter("png files (*.png)", "*.png");
+        fileChooser.getExtensionFilters().add(extFilter);
 
-		// Show save file dialog
-		File file = fileChooser.showSaveDialog(primaryStage);
+        //Show save file dialog
+        File file = fileChooser.showSaveDialog(primaryStage);
 
-		if (file != null) {
-			try {
-				WritableImage writableImage = new WritableImage((int) canvas.getWidth(), (int) canvas.getHeight());
-				canvas.snapshot(null, writableImage);
-				RenderedImage renderedImage = SwingFXUtils.fromFXImage(writableImage, null);
-				ImageIO.write(renderedImage, "png", file);
-			} catch (IOException ex) {
+        if(file != null){
+            try {
+                WritableImage writableImage = new WritableImage((int)canvas.getWidth(), (int)canvas.getHeight());
+                canvas.snapshot(null, writableImage);
+                RenderedImage renderedImage = SwingFXUtils.fromFXImage(writableImage, null);
+                ImageIO.write(renderedImage, "png", file);
+            } catch (IOException ex) {
 
-			}
-		}
+            }
+        }
 	}
 
-	public void hilfe() {
-		switch (aktuelleSeite) {
+	public void hilfe(){
+		switch(aktuelleSeite){
 		case STARTSEITE:
-			HilfeController.startHilfe();
+	        hilfeAnzeigen(HilfeController.startHilfe());
 			break;
 		case DOKUMENTENSEITE:
 			HilfeController.dokumentenHilfe();
@@ -137,52 +163,45 @@ public class MainController implements Initializable {
 		case SCHULBUCHSEITE:
 			HilfeController.schulbuchHilfe();
 			break;
-		}
+			}
 	}
 
-	@FXML
-	ImageView stift;
 
-	public void onPenClick(){
-		rubberb.setVisible(false);
-		backgroundb.setVisible(false);
-		farbeb.setVisible(false);
-		markerb.setVisible(false);
-		makeDrawable(MainController.Tool.Stift);
+	private void hilfeAnzeigen(ArrayList<HBox> hbox){
+		for(HBox aktuell : hbox)
+		untersteEbene.getChildren().add(aktuell);
+	}
+
+
+
+	public void onPenClick()
+	{
+		currentTool = Tool.Stift;
 		pencilb.setVisible(true);
-		/*stift.setOnMouseClicked(new EventHandler<MouseEvent>(){
-			@Override
-			public void handle(MouseEvent e){
-				makeDrawable(MainController.Tool.Stift);
-				pencilb.setVisible(true);
-			}
-			//makeDrawable(MainController.Tool.Stift);
+		rubberb.setVisible(false);
+		markerb.setVisible(false);
+	}
 
-
-
-	});pencilb.setVisible(true);
-	*/	}
-
-
-
-	public void onMarkerClick() {
+	public void onMarkerClick()
+	{
+		currentTool = Tool.Marker;
 		pencilb.setVisible(false);
 		rubberb.setVisible(false);
-		backgroundb.setVisible(false);
-		farbeb.setVisible(false);
 		markerb.setVisible(true);
-		makeDrawable(MainController.Tool.Marker);
 	}
-// Die Unterlegungen unter allen anderen Feldern werden entfernt und 
-	//unter dem ausgewählten hinzugefügt
-	public void onEraserClick() {
+	public void onEraserClick()
+	{
+		currentTool = Tool.Radierer;
 		pencilb.setVisible(false);
 		rubberb.setVisible(true);
-		backgroundb.setVisible(false);
-		farbeb.setVisible(false);
 		markerb.setVisible(false);
-		
-		makeDrawable(MainController.Tool.Radierer);
 	}
-	
+	public void changeColor()
+	{
+		color = colorPicker.getValue();
+	}
+	public void onDocumentClick()
+	{
+		listener.onDocumentClicked();
+	}
 }
