@@ -38,7 +38,7 @@
               </rowConstraints>
             </GridPane>
             <Button layoutX="1530.0" layoutY="137.0" mnemonicParsing="false" text="Upload" />
-            <MenuButton layoutX="69.0" layoutY="140.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Menü">
+            <MenuButton fx:id="menu" layoutX="69.0" layoutY="140.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Menü">
               <items>
                 <MenuItem mnemonicParsing="false" text="Internet" />
                 <MenuItem mnemonicParsing="false" text="Dokumente" />
