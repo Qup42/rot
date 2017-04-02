@@ -24,6 +24,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -43,6 +44,14 @@ public class MainController implements Initializable{
 	private ColorPicker colorPicker;
 	@FXML
 	AnchorPane untersteEbene;
+
+
+	@FXML
+	public ImageView pencilb;
+	public ImageView markerb;
+	public ImageView rubberb;
+	public ImageView rubbish;
+
 
 
 	private GraphicsContext graphicsContext;
@@ -171,14 +180,24 @@ public class MainController implements Initializable{
 	public void onPenClick()
 	{
 		currentTool = Tool.Stift;
+		pencilb.setVisible(true);
+		rubberb.setVisible(false);
+		markerb.setVisible(false);
 	}
+
 	public void onMarkerClick()
 	{
 		currentTool = Tool.Marker;
+		pencilb.setVisible(false);
+		rubberb.setVisible(false);
+		markerb.setVisible(true);
 	}
 	public void onEraserClick()
 	{
 		currentTool = Tool.Radierer;
+		pencilb.setVisible(false);
+		rubberb.setVisible(true);
+		markerb.setVisible(false);
 	}
 	public void changeColor()
 	{
@@ -195,5 +214,11 @@ public class MainController implements Initializable{
 		
 	}
 
+	public void onrubbishClick()
+	{
 
+		graphicsContext.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+
+
+	}
 }
