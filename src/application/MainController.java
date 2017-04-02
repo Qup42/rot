@@ -173,7 +173,8 @@ public class MainController implements Initializable {
 		markerb.setVisible(true);
 		makeDrawable(MainController.Tool.Marker);
 	}
-
+// Die Unterlegungen unter allen anderen Feldern werden entfernt und 
+	//unter dem ausgewählten hinzugefügt
 	public void onEraserClick() {
 		pencilb.setVisible(false);
 		rubberb.setVisible(true);
