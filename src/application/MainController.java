@@ -13,11 +13,13 @@ import javax.imageio.ImageIO;
 import help.Hilfe;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
@@ -31,6 +33,8 @@ public class MainController implements Initializable{
 
 	@FXML
 	public Canvas canvas;
+	@FXML
+	public ColorPicker colorPicker;;
 
 	public GraphicsContext graphicsContext;
 	public Color color = Color.DARKBLUE;
@@ -72,6 +76,7 @@ public class MainController implements Initializable{
 	                setParameters();
 	            }
 	        });
+	        colorPicker.setValue(Color.DARKBLUE);
 	}
 
 	private void setParameters()
@@ -149,6 +154,11 @@ public class MainController implements Initializable{
 	public void onEraserClick()
 	{
 		currentTool = Tool.Radierer;
+	}
+	public void changeColor(ActionEvent event)
+	{
+		ColorPicker colorPicker = (ColorPicker)event.getSource();
+		color = colorPicker.getValue();
 	}
 
 }
