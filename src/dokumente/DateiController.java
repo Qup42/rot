@@ -21,7 +21,7 @@ public class DateiController implements Initializable{
 
 	File zugehörigesFile;
 
-	ZyklischeAbhängigkeiten zyklen;
+	DateiCallback zyklen;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -36,23 +36,14 @@ public class DateiController implements Initializable{
 	{
 		dateiName.setText(file.getName());
 
-		if(file.isDirectory())
-		{
-			File iconFile = new File("src/dokumente/folder-icon.jpg");
-			Image imageIcon = new Image(iconFile.toURI().toString());
-			icon.setImage(imageIcon);
-		}
-		else
-		{
-			File iconFile = new File("src/dokumente/17.gif");
-			Image imageIcon = new Image(iconFile.toURI().toString());
-			icon.setImage(imageIcon);
-		}
+		File iconFile = (file.isDirectory())? new File("src/application/img/verzeichnis.jpg") : new File("src/application/img/datei.gif");
+		Image imageIcon = new Image(iconFile.toURI().toString());
+		icon.setImage(imageIcon);
 
 		zugehörigesFile = file;
 	}
 
-	public void setCallback(ZyklischeAbhängigkeiten callback)
+	public void setCallback(DateiCallback callback)
 	{
 		zyklen = callback;
 	}
@@ -66,8 +57,7 @@ public class DateiController implements Initializable{
 		}
 		else
 		{
-			//TODO: Klick auf die Datei weitergeben
-			System.out.println("Es wurde auf eine Datei geklickt.");
+			zyklen.klickAufDatei(zugehörigesFile);
 		}
 
 	}
