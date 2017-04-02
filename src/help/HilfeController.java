@@ -112,7 +112,7 @@ public class HilfeController implements Initializable {
 				}
 			}
 		});
-		hbox.setAlignment(value);
+		//hbox.setAlignment(value);
 		return hbox;
 	}
 }
