@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
@@ -14,7 +15,8 @@
    <children>
       <AnchorPane fx:id="basis" layoutX="-263.0" layoutY="-295.0" minHeight="900.0" minWidth="1600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
          <children>
-            <MenuButton fx:id="menu" layoutX="279.0" layoutY="306.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="28.0">
+            <ColorPicker layoutX="1132.0" layoutY="308.0" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;" />
+            <MenuButton fx:id="menu" layoutX="279.0" layoutY="306.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;">
               <items>
                 <MenuItem fx:id="internet" mnemonicParsing="false" text="Internet" />
                 <MenuItem fx:id="dokumente" mnemonicParsing="false" text="Dokumente" />
@@ -28,7 +30,7 @@
             <TextField fx:id="suche" layoutX="422.0" layoutY="308.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />
             <ScrollPane layoutX="1466.0" layoutY="385.0" prefHeight="493.0" prefWidth="126.0" style="-fx-background-color: WHITE;">
                <content>
-                  <DialogPane fx:id="seiten" prefHeight="745.0" prefWidth="59.0" />
+                  <DialogPane fx:id="seiten" prefHeight="493.0" prefWidth="107.0" style="-fx-background-color: white;" />
                </content>
             </ScrollPane>
             <Canvas fx:id="canvas" height="515.0" layoutX="264.0" layoutY="384.0" width="1145.0" />
@@ -72,12 +74,12 @@
                   <Image url="@img/eraser.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="1142.0" layoutY="307.0">
+            <ImageView layoutX="1087.0" layoutY="307.0">
                <image>
                   <Image url="@img/background.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="1096.0" layoutY="308.0">
+            <ImageView layoutX="1135.0" layoutY="310.0">
                <image>
                   <Image url="@../../../../Documents/workspace/Speedboard/src/img/cmyk.png" />
                </image>

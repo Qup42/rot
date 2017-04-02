@@ -8,6 +8,7 @@ import javax.swing.Icon;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
@@ -15,6 +16,7 @@ public class DateiController implements Initializable{
 
 	@FXML
 	Text dateiName;
+	@FXML
 	ImageView icon;
 
 	File zugehörigesFile;
@@ -33,6 +35,19 @@ public class DateiController implements Initializable{
 	public void setzeDatei(File file)
 	{
 		dateiName.setText(file.getName());
+
+		if(file.isDirectory())
+		{
+			File iconFile = new File("src/dokumente/folder-icon.jpg");
+			Image imageIcon = new Image(iconFile.toURI().toString());
+			icon.setImage(imageIcon);
+		}
+		else
+		{
+			File iconFile = new File("src/dokumente/17.gif");
+			Image imageIcon = new Image(iconFile.toURI().toString());
+			icon.setImage(imageIcon);
+		}
 
 		zugehörigesFile = file;
 	}
