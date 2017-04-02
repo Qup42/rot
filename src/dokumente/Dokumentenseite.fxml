@@ -12,15 +12,20 @@
 	<children>
 		<AnchorPane layoutX="-52.0" layoutY="-110.0" minHeight="900.0" minWidth="1600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
 			<children>
-            <MenuButton layoutX="57.0" layoutY="139.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="39.0">
+				<Line endX="1385.0" layoutX="209.0" layoutY="179.0" startX="-150.0" />
+				<MenuButton fx:id="menu" layoutX="63.0" layoutY="138.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="39.0">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
+                <MenuItem fx:id="internet" mnemonicParsing="false" text="Internet" />
+                <MenuItem fx:id="dokumente" mnemonicParsing="false" text="Dokumente" />
+                  <MenuItem fx:id="schulbuch" mnemonicParsing="false" text="Schulbuch" />
+                  <MenuItem fx:id="klasse_wechseln" mnemonicParsing="false" text="Klasse wechseln" />
+                  <MenuItem fx:id="programme" mnemonicParsing="false" text="Programme" />
+                  <MenuItem fx:id="bildschirmuebertragung" mnemonicParsing="false" text="Bildschirmübertragung" />
+                  <MenuItem fx:id="abmelden" mnemonicParsing="false" text="Abmelden" />
               </items>
             </MenuButton>
-				<Line endX="1385.0" layoutX="209.0" layoutY="179.0" startX="-150.0" />
 				<TextField fx:id="suche" layoutX="155.0" layoutY="135.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />
-            <ImageView fitHeight="24.0" fitWidth="32.0" layoutX="62.0" layoutY="138.0">
+            <ImageView fitHeight="24.0" fitWidth="31.0" layoutX="68.0" layoutY="141.0">
                <image>
                   <Image url="@../application/img/menu.png" />
                </image>
@@ -40,12 +45,12 @@
                   <Image url="@../application/img/cloud-computing.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="88.0" layoutY="205.0">
+            <ImageView layoutX="86.0" layoutY="205.0">
                <image>
                   <Image url="@../application/img/back.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="139.0" layoutY="206.0">
+            <ImageView layoutX="135.0" layoutY="201.0">
                <image>
                   <Image url="@../application/img/home.png" />
                </image>

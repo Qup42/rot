@@ -1,9 +1,13 @@
 package dokumente;
 import java.io.File;
+import java.util.Arrays;
 
 public class DokumenteWerkzeug implements DokumentWerkzeugSpecification{
 
 	File aktuellesVerzeichnis;
+	String rootDir = "C:\\Users\\Mint2017.Rot\\Desktop";
+	//String rootDir = System.getProperty("user.home");
+	//String rootDir = "C:\\Users\\Mint2017.Rot\\Desktop\\eclipse\\features";
 
 	public DokumenteWerkzeug()
 	{
@@ -12,12 +16,15 @@ public class DokumenteWerkzeug implements DokumentWerkzeugSpecification{
 
 	public void einVerzeichnisHoch()
 	{
+		if(Arrays.asList(aktuellesVerzeichnis.listRoots()).contains(aktuellesVerzeichnis))
+			return;
+
 		aktuellesVerzeichnis = aktuellesVerzeichnis.getParentFile();
 	}
 
 	@Override
 	public void geheInHomeVerzeichnis() {
-		aktuellesVerzeichnis = new File(System.getProperty("user.home"));
+		aktuellesVerzeichnis = new File(rootDir);
 	}
 
 	@Override
@@ -46,7 +53,7 @@ public class DokumenteWerkzeug implements DokumentWerkzeugSpecification{
 	@Override
 	public void geheInUnterverzeichnis(String verzeichnisName) throws IllegalArgumentException {
 		File neuesFile = new File(aktuellesVerzeichnis.getPath() + File.separator + verzeichnisName);
-		if(neuesFile.isFile())
+		if(neuesFile.isDirectory())
 		{
 			aktuellesVerzeichnis = neuesFile;
 		}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dokumente.DokumenteController">
+	<children>
+		<AnchorPane layoutX="-52.0" layoutY="-110.0" minHeight="900.0" minWidth="1600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+			<children>
+				<Line endX="1385.0" layoutX="209.0" layoutY="179.0" startX="-150.0" />
+				<!-- <MenuButton fx:id="menu" layoutX="279.0" layoutY="307.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="99.0" text="Menu">
+              <items>
+                <MenuItem fx:id="internet" mnemonicParsing="false" text="Internet" />
+                <MenuItem fx:id="dokumente" mnemonicParsing="false" text="Dokumente" />
+                  <MenuItem fx:id="schulbuch" mnemonicParsing="false" text="Schulbuch" />
+                  <MenuItem fx:id="klasse_wechseln" mnemonicParsing="false" text="Klasse wechseln" />
+                  <MenuItem fx:id="programme" mnemonicParsing="false" text="Programme" />
+                  <MenuItem fx:id="bildschirmuebertragung" mnemonicParsing="false" text="Bildschirmübertragung" />
+                  <MenuItem fx:id="abmelden" mnemonicParsing="false" text="Abmelden" />
+              </items>
+            </MenuButton>-->
+				<TextField fx:id="suche" layoutX="133.0" layoutY="135.0" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />
+				<Button fx:id="suche_los" layoutX="395.0" layoutY="135.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="48.0" text="Suche" />
+				            <Button fx:id="hilfe" layoutX="1475.0" layoutY="137.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="39.0" text="Hilfe" />
+				<Button fx:id="zurueck" layoutX="74.0" layoutY="204.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="51.0" text="zurück" />
+				<Button fx:id="home" layoutX="133.0" layoutY="204.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="49.0" text="Home" />
+            <GridPane fx:id="dokumente" layoutX="74.0" layoutY="249.0" prefHeight="634.0" prefWidth="1500.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+			</children>
+		</AnchorPane>
+	</children>
+</AnchorPane>
