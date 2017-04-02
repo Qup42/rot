@@ -86,6 +86,7 @@ public class MainController implements Initializable{
 		graphicsContext.setGlobalAlpha(alpha);
         graphicsContext.setLineWidth(lineWidth);
         graphicsContext.setStroke(tempColor);
+        graphicsContext.setFill(tempColor);
         graphicsContext.stroke();
 	}
 
@@ -112,4 +113,21 @@ public class MainController implements Initializable{
             }
         }
 	}
+	
+	
+	
+	
+	public void onPenClick()
+	{
+		makeDrawable(MainController.Tool.Stift);
+	}
+	public void onMarkerClick()
+	{
+		makeDrawable(MainController.Tool.Marker);
+	}
+	public void onEraserClick()
+	{
+		makeDrawable(MainController.Tool.Radierer);
+	}
+	
 }

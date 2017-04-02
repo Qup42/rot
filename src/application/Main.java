@@ -39,21 +39,6 @@ public class Main extends Application {
 			launch(args);
 		}
 		
-		public void onPenClick()
-		{
-			controller.makeDrawable(MainController.Tool.Stift);
-		}
-		public void onMarkerClick()
-		{
-			controller.makeDrawable(MainController.Tool.Marker);
-		}
-		public void onEraserClick()
-		{
-			controller.makeDrawable(MainController.Tool.Radierer);
-		}
-		public void changeColor()
-		{
-		}
 
 
 
