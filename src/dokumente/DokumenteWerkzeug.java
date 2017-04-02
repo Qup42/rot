@@ -46,7 +46,7 @@ public class DokumenteWerkzeug implements DokumentWerkzeugSpecification{
 	}
 
 	@Override
-	public File[] gebeAlleDateienInVerzeichnis() {
+	public File[] gebeAlleInVerzeichnis() {
 		return aktuellesVerzeichnis.listFiles();
 	}
 
