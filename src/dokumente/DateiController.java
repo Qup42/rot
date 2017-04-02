@@ -21,7 +21,7 @@ public class DateiController implements Initializable{
 
 	File zugehörigesFile;
 
-	ZyklischeAbhängigkeiten zyklen;
+	DateiCallback zyklen;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -43,7 +43,7 @@ public class DateiController implements Initializable{
 		zugehörigesFile = file;
 	}
 
-	public void setCallback(ZyklischeAbhängigkeiten callback)
+	public void setCallback(DateiCallback callback)
 	{
 		zyklen = callback;
 	}

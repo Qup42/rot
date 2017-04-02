@@ -11,7 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.FlowPane;
 
-public class DokumenteController implements Initializable, ZyklischeAbhängigkeiten {
+public class DokumenteController implements Initializable, DateiCallback {
 
 	@FXML
 	FlowPane dokumenteFlowPane;
