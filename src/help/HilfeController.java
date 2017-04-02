@@ -89,18 +89,18 @@ public class HilfeController implements Initializable {
 
 	public static HBox labeln(ImageView image, String hilfestellung) {
 		Label label = new Label(hilfestellung);
-		label.setStyle("-fx-background-color: coral; -fx-padding: 10px;");
+		label.setStyle("-fx-background-color: linen; -fx-padding: 10px;");
 		label.setWrapText(true);
 		HBox hbox = new HBox();
 		hbox.getChildren().add(label);
 		hbox.setMaxWidth(75);
 		hbox.setMaxHeight(100);
-		hbox.setOpacity(0.2);
+		hbox.setOpacity(0.5);
 		hbox.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent e) {
 				if (hbox.getMaxHeight() == 200) {
-					hbox.setOpacity(0.2);
+					hbox.setOpacity(0.5);
 					hbox.setMaxWidth(75);
 					hbox.setMaxHeight(100);
 				} else {
@@ -110,8 +110,8 @@ public class HilfeController implements Initializable {
 				}
 			}
 		});
-		hbox.setLayoutX(image.getLayoutX());
-		hbox.setLayoutY(image.getLayoutY()+ 20);
+		//hbox.setLayoutX(image.getLayoutX());
+		//hbox.setLayoutY(image.getLayoutY()+ 20);
 		return hbox;
 	}
 }

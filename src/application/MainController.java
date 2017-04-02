@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import javax.imageio.ImageIO;
 
 import javafx.embed.swing.SwingFXUtils;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -37,7 +38,7 @@ public class MainController implements Initializable{
 	public ColorPicker colorPicker;;
 
 	public GraphicsContext graphicsContext;
-	public Color color = Color.DARKBLUE;
+	public Color color = Color.BLACK;
 	public Tool currentTool = Tool.Stift;
 
 	@Override
@@ -56,7 +57,7 @@ public class MainController implements Initializable{
 	{
 		graphicsContext = canvas.getGraphicsContext2D();
 		canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
-	                new EventHandler<MouseEvent>(){ 
+	                new EventHandler<MouseEvent>(){
 
 	            @Override
 	            public void handle(MouseEvent event) {
@@ -77,7 +78,7 @@ public class MainController implements Initializable{
 	            }
 	        });
 
-	        colorPicker.setValue(Color.DARKBLUE);
+	        colorPicker.setValue(Color.BLACK);
 	}
 
 	private void setParameters()
@@ -97,10 +98,10 @@ public class MainController implements Initializable{
 			alpha = 1; lineWidth = 10; tempColor = Color.WHITE;
 			break;
 		}
-		graphicsContext.setGlobalAlpha(alpha);
         graphicsContext.setLineWidth(lineWidth);
         graphicsContext.setStroke(tempColor);
         graphicsContext.setFill(tempColor);
+		graphicsContext.setGlobalAlpha(0.1);
         graphicsContext.stroke();
 	}
 
@@ -148,12 +149,6 @@ public class MainController implements Initializable{
 		for(HBox aktuell : hbox)
 		untersteEbene.getChildren().add(aktuell);
 	}
-
-
-
-
-
-
 
 
 	public void onPenClick()
