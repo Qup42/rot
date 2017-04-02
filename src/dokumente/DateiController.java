@@ -17,6 +17,8 @@ public class DateiController implements Initializable{
 	Text dateiName;
 	ImageView icon;
 
+	File zugehörigesFile;
+
 	ZyklischeAbhängigkeiten zyklen;
 
 	@Override
@@ -31,6 +33,8 @@ public class DateiController implements Initializable{
 	public void setzeDatei(File file)
 	{
 		dateiName.setText(file.getName());
+
+		zugehörigesFile = file;
 	}
 
 	public void setCallback(ZyklischeAbhängigkeiten callback)
@@ -41,6 +45,15 @@ public class DateiController implements Initializable{
 	@FXML
 	protected void geheInOrdner()
 	{
-		zyklen.geheInVerzeichnis(dateiName.getText());
+		if(zugehörigesFile.isDirectory())
+		{
+			zyklen.geheInVerzeichnis(dateiName.getText());
+		}
+		else
+		{
+			//TODO: Klick auf die Datei weitergeben
+			System.out.println("Es wurde auf eine Datei geklickt.");
+		}
+
 	}
 }
