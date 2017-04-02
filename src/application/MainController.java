@@ -2,6 +2,8 @@ package application;
 
 import help.HilfeController;
 
+import java.awt.Desktop;
+import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
@@ -20,6 +22,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.ColorPicker;
+import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -28,6 +31,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+
 public class MainController implements Initializable{
 
 	Seiten aktuelleSeite = Seiten.STARTSEITE;
@@ -35,7 +39,10 @@ public class MainController implements Initializable{
 	@FXML
 	private Canvas canvas;
 	@FXML
-	private ColorPicker colorPicker;;
+	private ColorPicker colorPicker;
+	@FXML
+	AnchorPane untersteEbene;
+
 
 	private GraphicsContext graphicsContext;
 	private Color color = Color.DARKBLUE;
@@ -49,6 +56,11 @@ public class MainController implements Initializable{
 	public void setListener(ChooseDocumentCallback listener)
 	{
 		this.listener = listener;
+	}
+	public void setBackground(File file)
+	{
+		//TODO: set File as Backround
+		//Image image = SwingUtils.toFXImage(ImageIO.read(file));
 	}
 
 
@@ -147,9 +159,7 @@ public class MainController implements Initializable{
 			}
 	}
 
-	@FXML
-	AnchorPane untersteEbene;
-
+	
 	private void hilfeAnzeigen(ArrayList<HBox> hbox){
 		for(HBox aktuell : hbox)
 		untersteEbene.getChildren().add(aktuell);
