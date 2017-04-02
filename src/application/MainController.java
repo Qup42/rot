@@ -74,7 +74,7 @@ public class MainController implements Initializable{
 	{
 		graphicsContext = canvas.getGraphicsContext2D();
 		canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
-	                new EventHandler<MouseEvent>(){ 
+	                new EventHandler<MouseEvent>(){
 
 	            @Override
 	            public void handle(MouseEvent event) {
@@ -159,14 +159,14 @@ public class MainController implements Initializable{
 			}
 	}
 
-	
+
 	private void hilfeAnzeigen(ArrayList<HBox> hbox){
 		for(HBox aktuell : hbox)
 		untersteEbene.getChildren().add(aktuell);
 	}
 
 
-	
+
 	public void onPenClick()
 	{
 		currentTool = Tool.Stift;
@@ -187,6 +187,6 @@ public class MainController implements Initializable{
 	{
 		listener.onDocumentClicked();
 	}
-	
+
 
 }
