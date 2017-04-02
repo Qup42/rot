@@ -18,6 +18,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.ComboBox;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -27,13 +28,19 @@ public class MainController implements Initializable{
 	public Canvas canvas;
 
 	public GraphicsContext graphicsContext;
+	public Color color = Color.DARKBLUE;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
 	}
-	//Ich bin ein KOmmentar und damit eine Aenderung!!!
-	public void makeDrawable()
+	
+	public enum Tool {
+		Stift,Marker,Radierer,
+	} 
+	
+	
+	public void makeDrawable(Tool tool)
 	{
 		graphicsContext = canvas.getGraphicsContext2D();
 		canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
@@ -43,7 +50,7 @@ public class MainController implements Initializable{
 	            public void handle(MouseEvent event) {
 	                graphicsContext.beginPath();
 	                graphicsContext.moveTo(event.getX(), event.getY());
-	                graphicsContext.stroke();
+	                setParameters(tool);
 	            }
 	        });
 
@@ -54,8 +61,32 @@ public class MainController implements Initializable{
 	            public void handle(MouseEvent event) {
 	                graphicsContext.lineTo(event.getX(), event.getY());
 	                graphicsContext.stroke();
+	                setParameters(tool);
 	            }
 	        });
+	}
+	
+	private void setParameters(Tool tool)
+	{
+		double alpha = 1;
+		double lineWidth = 1;
+		Color tempColor = this.color;
+		switch(tool)
+		{
+		case Stift:
+			alpha = 1; lineWidth = 1;
+			break;
+		case Marker:
+			alpha = 0.5; lineWidth = 5;
+			break;
+		case Radierer:
+			alpha = 1; lineWidth = 5; tempColor = Color.WHITE;
+			break;
+		}
+		graphicsContext.setGlobalAlpha(alpha);
+        graphicsContext.setLineWidth(lineWidth);
+        graphicsContext.setStroke(tempColor);
+        graphicsContext.stroke();
 	}
 
 	public void save(Stage primaryStage)
