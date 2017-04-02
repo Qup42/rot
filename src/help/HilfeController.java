@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 
 public class HilfeController implements Initializable{
 
@@ -53,10 +54,12 @@ public class HilfeController implements Initializable{
 	Button cloud_upload;
 
 	@FXML
-	public static void startHilfe(){
+	public static HBox startHilfe(){
 		Label label = new Label("Sally collects seashells on the seashore");
 		label.setStyle("-fx-background-color: coral; -fx-padding: 10px;");
-	
+		HBox hbox = new HBox();
+		hbox.getChildren().add(label);
+		return hbox;
 	}
 
 	@FXML
