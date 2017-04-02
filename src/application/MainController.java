@@ -25,14 +25,14 @@ public class MainController implements Initializable{
 
 	@FXML
 	public Canvas canvas;
-	
+
 	public GraphicsContext graphicsContext;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
-	}
 
+	}
+	//Ich bin ein KOmmentar und damit eine Aenderung!!!
 	public void makeDrawable()
 	{
 		graphicsContext = canvas.getGraphicsContext2D();
@@ -61,15 +61,15 @@ public class MainController implements Initializable{
 	public void save(Stage primaryStage)
 	{
 		FileChooser fileChooser = new FileChooser();
-        
+
         //Set extension filter
-        FileChooser.ExtensionFilter extFilter = 
+        FileChooser.ExtensionFilter extFilter =
                 new FileChooser.ExtensionFilter("png files (*.png)", "*.png");
         fileChooser.getExtensionFilters().add(extFilter);
-       
+
         //Show save file dialog
         File file = fileChooser.showSaveDialog(primaryStage);
-         
+
         if(file != null){
             try {
                 WritableImage writableImage = new WritableImage((int)canvas.getWidth(), (int)canvas.getHeight());
@@ -77,7 +77,7 @@ public class MainController implements Initializable{
                 RenderedImage renderedImage = SwingFXUtils.fromFXImage(writableImage, null);
                 ImageIO.write(renderedImage, "png", file);
             } catch (IOException ex) {
-                
+
             }
         }
 	}
