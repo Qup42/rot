@@ -49,8 +49,8 @@ public class PaintController implements Initializable{
 	        });
 	}
 
-	public void draw(ActionEvent e)
+	public void save()
 	{
-		//TODO: Machen
+		
 	}
 }
