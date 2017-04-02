@@ -31,8 +31,8 @@ public class LoginController implements Initializable{
 		fach.getItems().clear();
 		klasse.getItems().clear();
 
-		fach.getItems().addAll("Mathematik", "Deutsch", "Geschichte");
-	    klasse.getItems().addAll("9a", "9b", "9c", "10b", "10d");
+		fach.getItems().addAll("Mathematik", "Deutsch", "Geschichte", "Erdkunde", "Französich", "Informatik");
+	    klasse.getItems().addAll("8a", "9a", "9b", "9c", "10b", "10d", "MINT-Profil", "Geschichts-Profil");
 	}
 
 	public void login(ActionEvent e)
