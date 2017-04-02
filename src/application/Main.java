@@ -34,9 +34,6 @@ public class Main extends Application {
 
 
 
-
-
-
     //NICHT ANSCHAUEN!!!!
 
     private Stage primaryStage;
