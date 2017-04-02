@@ -229,9 +229,10 @@ public class MainController implements Initializable {
 			untersteEbene.getChildren().add(aktuell);
 	}
 
-//	private void hilfeLoeschen(){
-//		untersteEbene.getChildren().remove(untersteEbene.getChildren().size()-15, untersteEbene.getChildren().size()-1);
-//	}
+//	private void hilfeLoeschen(ActionEvent event)
+//		{
+//
+//		}
 
 	public void onPenClick() {
 		currentTool = Tool.Stift;
@@ -259,7 +260,7 @@ public class MainController implements Initializable {
 		color = colorPicker.getValue();
 	}
 
-	public void onMenuClick(ActionEvent event)
+	public void onDocumentClick(ActionEvent event)
 	{
 		MenuItem item = (MenuItem) event.getSource();
 		switch(item.getText())

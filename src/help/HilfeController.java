@@ -44,12 +44,12 @@ public class HilfeController implements Initializable {
 		hbox.getChildren().add(label);
 		hbox.setMaxWidth(75);
 		hbox.setMaxHeight(100);
-		hbox.setOpacity(0.5);
+		hbox.setOpacity(0.2);
 		hbox.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent e) {
 				if (hbox.getMaxHeight() == 200) {
-					hbox.setOpacity(0.5);
+					hbox.setOpacity(0.2);
 					hbox.setMaxWidth(75);
 					hbox.setMaxHeight(100);
 				} else {
@@ -59,8 +59,8 @@ public class HilfeController implements Initializable {
 				}
 			}
 		});
-		hbox.setLayoutX(image.getLayoutX());
-		hbox.setLayoutY(image.getLayoutY());
+		hbox.setLayoutX(image.getLayoutX()-290);
+		hbox.setLayoutY(image.getLayoutY()-290);
 		return hbox;
 	}
 }
