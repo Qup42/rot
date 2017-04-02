@@ -37,8 +37,22 @@ public class Main extends Application implements LoginCallback, MenuCallback, Do
 		public void onItemClicked(Menu item) {
 			switch(item)
 			{
+			case Internet:
+				 break;
 			case Dokumente:
-				showDocuments();
+				 showDocuments(); break;
+			case Schulbuch:
+				 break;
+			case Klasse:
+				 showLogin(); break;
+			case Programme:
+				 break;
+			case Bildschirm:
+				 break;
+			case Abmelden:
+				showLogin(); break;
+			case Zurück:
+				showMain(null); break;
 			}
 			
 		}
@@ -94,7 +108,7 @@ public class Main extends Application implements LoginCallback, MenuCallback, Do
 
 	            AnchorPane layout  = (AnchorPane) loader.load();
 	        	DokumenteController controller = loader.getController();
-	        	controller.setCallback(this);
+	        	controller.setCallback(this,this);
 	            // Show the scene containing the root layout.
 	            Scene scene = new Scene(layout);
 	            primaryStage.setScene(scene);
@@ -116,7 +130,7 @@ public class Main extends Application implements LoginCallback, MenuCallback, Do
 			Schulbuch,
 			Klasse,
 			Programme,
-			Bildschim,
+			Bildschirm,
 			Abmelden,
 			Zurück
 		}

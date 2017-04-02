@@ -212,8 +212,22 @@ public class MainController implements Initializable{
 		MenuItem item = (MenuItem) event.getSource();
 		switch(item.getText())
 		{
+		case "Internet":
+			listener.onItemClicked(Main.Menu.Internet); break;
 		case "Dokumente":
-			listener.onItemClicked(Main.Menu.Dokumente);;
+			listener.onItemClicked(Main.Menu.Dokumente); break;
+		case "Schulbuch":
+			listener.onItemClicked(Main.Menu.Schulbuch); break;
+		case "Klasse wechseln":
+			listener.onItemClicked(Main.Menu.Klasse); break;
+		case "Programme":
+			listener.onItemClicked(Main.Menu.Programme); break;
+		case "Bildschirmübertragung":
+			listener.onItemClicked(Main.Menu.Bildschirm); break;
+		case "Abmelden":
+			listener.onItemClicked(Main.Menu.Abmelden); break;
+		case "Zurück":
+			listener.onItemClicked(Main.Menu.Zurück); break;
 		}
 
 	}
