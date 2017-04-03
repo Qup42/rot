@@ -23,6 +23,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -238,6 +239,14 @@ public class MainController implements Initializable {
 	private void hilfeLoeschen(ActionEvent event)
 	{
 		
+	}
+
+	@FXML
+	public void nichtVerfuegbar(){
+		Alert nichtVerf = new Alert(AlertType.WARNING);
+		nichtVerf.setContentText("Diese Funktion ist momentan nicht verfügbar.");
+		nichtVerf.setHeaderText("Achtung");
+		nichtVerf.show();
 	}
 
 	public void onPenClick() {
