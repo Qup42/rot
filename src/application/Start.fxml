@@ -36,12 +36,12 @@
             <ColorPicker fx:id="colorPicker" layoutX="1132.0" layoutY="308.0" onAction="#changeColor" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;" />
             <MenuButton fx:id="menu_menu" layoutX="279.0" layoutY="306.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;">
               <items>
-                <MenuItem fx:id="internet_menu" mnemonicParsing="false" text="Internet" />
+                <MenuItem fx:id="internet_menu" disable="true" mnemonicParsing="false" text="Internet" />
                 <MenuItem fx:id="dokumente_menu" mnemonicParsing="false" onAction="#onDocumentClick" text="Dokumente" />
-                  <MenuItem fx:id="schulbuch_menu" mnemonicParsing="false" text="Schulbuch" />
+                  <MenuItem fx:id="schulbuch_menu" disable="true" mnemonicParsing="false" text="Schulbuch" />
                   <MenuItem fx:id="klasse_wechseln_menu" mnemonicParsing="false" text="Klasse wechseln" />
-                  <MenuItem fx:id="programme_menu" mnemonicParsing="false" text="Programme" />
-                  <MenuItem fx:id="bildschirmuebertragung_menu" mnemonicParsing="false" text="Bildschirmübertragung" />
+                  <MenuItem fx:id="programme_menu" disable="true" mnemonicParsing="false" text="Programme" />
+                  <MenuItem fx:id="bildschirmuebertragung_menu" disable="true" mnemonicParsing="false" text="Bildschirmübertragung" />
                   <MenuItem fx:id="abmelden_menu" mnemonicParsing="false" text="Abmelden" />
               </items>
             </MenuButton>
@@ -107,7 +107,7 @@
                   <Image url="@img/rubbish.png" />
                </image>
             </ImageView>
-            <Slider fx:id="slider" blockIncrement="1.0" layoutX="800.0" layoutY="312.0" majorTickUnit="5.0" max="5.0" minorTickCount="5" showTickLabels="true" />
+            <Slider fx:id="slider" blockIncrement="0.1" layoutX="800.0" layoutY="312.0" majorTickUnit="1.0" max="5.0" min="0.1" minorTickCount="0" showTickLabels="true" showTickMarks="true" value="1.0" />
          </children>
       </AnchorPane>
    </children>

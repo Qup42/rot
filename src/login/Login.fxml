@@ -14,7 +14,7 @@
             <Insets />
          </opaqueInsets></ComboBox>
       <ComboBox fx:id="klasse" layoutX="444.0" layoutY="265.0" prefWidth="150.0" promptText="Klasse" />
-      <Text layoutX="63.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bitte halten Sie ihren Chip vor den Leser!">
+      <Text layoutX="345.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Willkommen">
          <font>
             <Font size="51.0" />
          </font>

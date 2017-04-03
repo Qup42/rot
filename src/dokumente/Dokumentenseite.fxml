@@ -16,14 +16,14 @@
 				<Line endX="1385.0" layoutX="209.0" layoutY="179.0" startX="-150.0" />
 				<MenuButton fx:id="menu" layoutX="84.0" layoutY="135.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="52.0" style="-fx-background-color: white;">
 					<items>
-						<MenuItem fx:id="internet" mnemonicParsing="false" text="Internet" onAction="#onMenuClick" />
-						<MenuItem fx:id="dokumente" mnemonicParsing="false" text="Dokumente" onAction="#onMenuClick" />
-						<MenuItem fx:id="schulbuch" mnemonicParsing="false" text="Schulbuch" onAction="#onMenuClick" />
-						<MenuItem fx:id="klasse_wechseln" mnemonicParsing="false" text="Klasse wechseln" onAction="#onMenuClick" />
-						<MenuItem fx:id="programme" mnemonicParsing="false" text="Programme" onAction="#onMenuClick" />
-						<MenuItem fx:id="bildschirmuebertragung" mnemonicParsing="false" text="Bildschirmübertragung" onAction="#onMenuClick" />
-						<MenuItem fx:id="abmelden" mnemonicParsing="false" text="Abmelden" onAction="#onMenuClick" />
-						<MenuItem fx:id="zurück" mnemonicParsing="false" text="Zurück"  onAction="#onMenuClick" />
+						<MenuItem fx:id="internet" disable="true" mnemonicParsing="false" onAction="#onMenuClick" text="Internet" />
+						<MenuItem fx:id="dokumente" mnemonicParsing="false" onAction="#onMenuClick" text="Dokumente" />
+						<MenuItem fx:id="schulbuch" disable="true" mnemonicParsing="false" onAction="#onMenuClick" text="Schulbuch" />
+						<MenuItem fx:id="klasse_wechseln" mnemonicParsing="false" onAction="#onMenuClick" text="Klasse wechseln" />
+						<MenuItem fx:id="programme" disable="true" mnemonicParsing="false" onAction="#onMenuClick" text="Programme" />
+						<MenuItem fx:id="bildschirmuebertragung" disable="true" mnemonicParsing="false" onAction="#onMenuClick" text="Bildschirmübertragung" />
+						<MenuItem fx:id="abmelden" mnemonicParsing="false" onAction="#onMenuClick" text="Abmelden" />
+						<MenuItem fx:id="zurück" mnemonicParsing="false" onAction="#onMenuClick" text="Zurück" />
 					</items>
 				</MenuButton>
 				<ImageView fitHeight="24.0" fitWidth="31.0" layoutX="82.0" layoutY="138.0" style="visibility: true;">
