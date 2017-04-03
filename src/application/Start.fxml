@@ -57,12 +57,12 @@
                   <Image url="@img/menu.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="suche" layoutX="688.0" layoutY="309.0">
+            <ImageView fx:id="suche" layoutX="688.0" layoutY="309.0" onMouseClicked="#nichtVerfuegbar">
                <image>
                   <Image url="@img/lupe.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="cloud_upload" fitHeight="28.0" fitWidth="36.0" layoutX="1541.0" layoutY="311.0">
+            <ImageView fx:id="cloud_upload" fitHeight="28.0" fitWidth="36.0" layoutX="1541.0" layoutY="311.0" onMouseClicked="#nichtVerfuegbar">
                <image>
                   <Image url="@img/cloud-computing.png" />
                </image>
@@ -72,7 +72,7 @@
                   <Image url="@img/question.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="geometrie" layoutX="1456.0" layoutY="311.0">
+            <ImageView fx:id="geometrie" layoutX="1456.0" layoutY="311.0" onMouseClicked="#nichtVerfuegbar">
                <image>
                   <Image url="@img/Geometrie.png" />
                </image>
