@@ -36,13 +36,13 @@
             <ColorPicker fx:id="colorPicker" layoutX="1132.0" layoutY="308.0" onAction="#changeColor" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;" />
             <MenuButton fx:id="menu_menu" layoutX="279.0" layoutY="306.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;">
               <items>
-                <MenuItem fx:id="internet_menu" disable="true" mnemonicParsing="false" text="Internet" />
+                <MenuItem fx:id="internet_menu" disable="true" mnemonicParsing="false" text="Internet" onAction="#onDocumentClick" />
                 <MenuItem fx:id="dokumente_menu" mnemonicParsing="false" onAction="#onDocumentClick" text="Dokumente" />
                   <MenuItem fx:id="schulbuch_menu" disable="true" mnemonicParsing="false" text="Schulbuch" />
-                  <MenuItem fx:id="klasse_wechseln_menu" mnemonicParsing="false" text="Klasse wechseln" />
+                  <MenuItem fx:id="klasse_wechseln_menu" mnemonicParsing="false" text="Klasse wechseln" onAction="#onDocumentClick" />
                   <MenuItem fx:id="programme_menu" disable="true" mnemonicParsing="false" text="Programme" />
                   <MenuItem fx:id="bildschirmuebertragung_menu" disable="true" mnemonicParsing="false" text="Bildschirmübertragung" />
-                  <MenuItem fx:id="abmelden_menu" mnemonicParsing="false" text="Abmelden" />
+                  <MenuItem fx:id="abmelden_menu" mnemonicParsing="false" text="Abmelden" onAction="#onDocumentClick" />
               </items>
             </MenuButton>
             <TextField fx:id="suche_feld" layoutX="422.0" layoutY="308.0" onMouseClicked="#suche" opacity="0.4" prefHeight="29.0" prefWidth="248.0" text="Suche" />
