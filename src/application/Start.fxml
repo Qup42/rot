@@ -36,7 +36,8 @@
             <ColorPicker fx:id="colorPicker" layoutX="1132.0" layoutY="308.0" onAction="#changeColor" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;" />
             <MenuButton fx:id="menu_menu" layoutX="279.0" layoutY="306.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="49.0" style="-fx-background-color: white;">
               <items>
-                <MenuItem fx:id="internet_menu" disable="true" mnemonicParsing="false" text="Internet" />
+                <MenuItem fx:id="internet_menu" mnemonicParsing="false" onAction="#internet" text="Internet" />
+                  <MenuItem fx:id="youtube_menu" mnemonicParsing="false" onAction="#youtube" text="YouTube" />
                 <MenuItem fx:id="dokumente_menu" mnemonicParsing="false" onAction="#onDocumentClick" text="Dokumente" />
                   <MenuItem fx:id="schulbuch_menu" disable="true" mnemonicParsing="false" text="Schulbuch" />
                   <MenuItem fx:id="klasse_wechseln_menu" mnemonicParsing="false" text="Klasse wechseln" />

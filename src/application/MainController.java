@@ -234,6 +234,27 @@ public class MainController implements Initializable {
 //
 //		}
 
+
+	@FXML
+	public void internet(){
+		try {
+			Runtime.getRuntime().exec("cmd /c start http://google.com/");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	public void youtube(){
+		try {
+			Runtime.getRuntime().exec("cmd /c start http://youtube.com/");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	@FXML
 	public void nichtVerfuegbar(){
 		Alert nichtVerf = new Alert(AlertType.WARNING);
