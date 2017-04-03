@@ -65,6 +65,7 @@ public class MainController implements Initializable {
 	public Tool currentTool = Tool.Stift;
 	private MenuCallback listener;
 	private HilfeController hilfeCon;
+	private boolean helpIsShown = false;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -197,8 +198,8 @@ public class MainController implements Initializable {
 	private int counter_hilfe = 0;
 
 	public void hilfe() {
-		counter_hilfe++;
-		if (counter_hilfe % 2 == 0) {
+		if (!helpIsShown) {
+			helpIsShown = true;
 			switch (aktuelleSeite) {
 			case STARTSEITE:
 				hilfeAnzeigen(hilfeCon.startHilfe(menu, Hilfe.MENU));
@@ -220,7 +221,14 @@ public class MainController implements Initializable {
 				hilfeAnzeigen(hilfeCon.schulbuchHilfe());
 				break;
 			}
-		} //else hilfeLoeschen();
+		} 
+		else 
+		{
+			helpIsShown = false;
+			listener.onItemClicked(Main.Menu.Zurück);
+			
+		}
+			
 	}
 
 
@@ -228,11 +236,10 @@ public class MainController implements Initializable {
 		for (HBox aktuell : hbox)
 			untersteEbene.getChildren().add(aktuell);
 	}
-
-//	private void hilfeLoeschen(ActionEvent event)
-//		{
-//
-//		}
+	private void hilfeLoeschen(ActionEvent event)
+	{
+		
+	}
 
 
 	@FXML
