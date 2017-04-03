@@ -107,7 +107,7 @@
                   <Image url="@img/rubbish.png" />
                </image>
             </ImageView>
-            <Slider fx:id="slider" blockIncrement="0.1" layoutX="800.0" layoutY="312.0" majorTickUnit="5.0" max="5.0" min="0.1" minorTickCount="5" showTickLabels="true" value="1.0" />
+            <Slider fx:id="slider" blockIncrement="0.1" layoutX="800.0" layoutY="312.0" majorTickUnit="1.0" max="5.0" min="0.1" minorTickCount="0" showTickLabels="true" showTickMarks="true" value="1.0" />
          </children>
       </AnchorPane>
    </children>
